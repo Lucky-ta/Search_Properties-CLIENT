@@ -3,16 +3,11 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
 
 * {
+    transition: all 0.2s;
     padding: 0;
     margin: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
-body {
-  background-color: #fafafa;
-
-}
-
 
 h1,
 h2,
