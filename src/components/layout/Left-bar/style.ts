@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+const BACK_GROUND_LIGHTGRAY = "#eff1f4";
+
 export const LeftBar = styled.div`
   display: flex;
   flex-direction: column;
@@ -40,11 +42,11 @@ export const LeftBar = styled.div`
     }
 
     &:hover {
-      background-color: #eff1f4;
+      background-color: ${BACK_GROUND_LIGHTGRAY};
     }
   }
 
   .selected-button {
-    background-color: #eff1f4;
+    background-color: ${BACK_GROUND_LIGHTGRAY};
   }
 `;

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+const BACK_GROUND_LIGHTGRAY = "#eff1f4";
+
 export const Header = styled.div`
   display: flex;
   background-color: #ffffff;
@@ -21,7 +23,7 @@ export const Header = styled.div`
     padding-bottom: 0.5rem;
 
     &:hover {
-      background-color: #eff1f4;
+      background-color: ${BACK_GROUND_LIGHTGRAY};
     }
   }
   .profile-button {
