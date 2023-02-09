@@ -7,7 +7,7 @@ interface MyProviderPropsShape {
 }
 
 export function MyProvider({ children }: MyProviderPropsShape) {
-  const [showLeftOption, setShowLeftOption] = useState(false);
+  const [showLeftOption, setShowLeftOption] = useState(true);
 
   const data = {
     showLeftOption,
