@@ -26,13 +26,18 @@ export const Header = styled.div`
       background-color: ${BACK_GROUND_LIGHTGRAY};
     }
   }
+  
   .profile-button {
     padding: 0.1rem;
     padding-left: 0.5rem;
-    padding-right: 0.5rem;
     border-radius: 20rem;
     min-width: 12rem;
     border: 1px solid #c6c7c9;
+
+    .arrow-svg {
+        margin: auto;
+    }
+
   }
 
   div {

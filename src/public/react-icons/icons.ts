@@ -1,3 +1,4 @@
+import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { IoCreateOutline } from "react-icons/io5";
 import { HiOutlinePlusSm } from "react-icons/hi";
 import { BsPersonCircle } from "react-icons/bs";
@@ -10,4 +11,6 @@ export {
     GoThreeBars,
     IoCreateOutline,
     HiOutlinePlusSm,
+    MdOutlineKeyboardArrowDown,
+    MdOutlineKeyboardArrowUp,
 };
