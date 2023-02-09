@@ -26,15 +26,10 @@ export const LeftBar = styled.div`
   }
 
   button {
-    display: flex;
     gap: 0.6rem;
-    background: none;
-    border: none;
     padding: 1rem;
     border-radius: 4px;
     cursor: pointer;
-
-
 
     span {
       font-size: 1rem;
@@ -51,5 +46,5 @@ export const LeftBar = styled.div`
 
   .selected-button {
     background-color: #eff1f4;
-    }
+  }
 `;

@@ -9,6 +9,9 @@ export const Layout = styled.div`
 
   .content {
     display: flex;
-    gap: 1rem;
+  }
+
+  .container {
+    width: 100%;
   }
 `;

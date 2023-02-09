@@ -12,13 +12,9 @@ export const Header = styled.div`
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
   button {
-    display: flex;
     gap: 1rem;
     border-radius: 4px;
     align-items: center;
-    background: none;
-    border: none;
-    cursor: pointer;
     font-size: 1.2rem;
     padding: 1.5rem;
     padding-top: 0.5rem;
@@ -34,6 +30,7 @@ export const Header = styled.div`
     padding-right: 0.5rem;
     border-radius: 20rem;
     min-width: 12rem;
+    border: 1px solid #c6c7c9;
   }
 
   div {
