@@ -1,16 +1,10 @@
-import { HiOutlinePlusSm } from "public/react-icons/icons";
-
-import { Search } from "components/data/Search";
+import { RegisterSystem } from "components/data/Request-system";
 import { Layout } from "components/Layout";
 
 export default function Register() {
   return (
     <Layout>
-      <Search
-        inputIcon={<HiOutlinePlusSm />}
-        inputPlaceholder="Registrar"
-        name="Registrar imóvel"
-      />
+      <RegisterSystem />
     </Layout>
   );
 }

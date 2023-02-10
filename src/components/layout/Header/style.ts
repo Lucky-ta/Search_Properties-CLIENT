@@ -6,7 +6,7 @@ export const Header = styled.div`
   display: flex;
   background-color: #ffffff;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.5rem;
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
   align-items: center;
@@ -26,7 +26,7 @@ export const Header = styled.div`
       background-color: ${BACK_GROUND_LIGHTGRAY};
     }
   }
-  
+
   .profile-button {
     padding: 0.1rem;
     padding-left: 0.5rem;
@@ -35,15 +35,14 @@ export const Header = styled.div`
     border: 1px solid #c6c7c9;
 
     .arrow-svg {
-        margin: auto;
+      margin: auto;
     }
-
   }
 
   div {
     display: flex;
     align-items: center;
-    gap: 0.1rem;
+    gap: 0.2rem;
     font-size: 1.3rem;
     font-weight: bold;
 
