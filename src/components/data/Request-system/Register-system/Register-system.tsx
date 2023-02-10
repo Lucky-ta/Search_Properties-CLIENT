@@ -1,4 +1,4 @@
-import { HiOutlinePlusSm } from "public/react-icons/icons";
+import { HiOutlinePlusSm } from "public/react-icons";
 
 import * as S from "../style";
 

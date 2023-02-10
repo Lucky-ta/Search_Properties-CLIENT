@@ -1,4 +1,4 @@
-import { BiSearchAlt2 } from "public/react-icons/icons";
+import { BiSearchAlt2 } from "public/react-icons";
 
 import * as S from "../style";
 

@@ -5,7 +5,7 @@ import {
   GoThreeBars,
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,
-} from "public/react-icons/icons";
+} from "public/react-icons";
 
 import { MyContext } from "context";
 

@@ -1,4 +1,4 @@
-import { BsPersonCircle } from "public/react-icons/icons";
+import { BsPersonCircle } from "public/react-icons";
 
 import { IModalProps } from "./interface";
 
