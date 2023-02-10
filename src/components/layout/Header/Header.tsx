@@ -9,6 +9,8 @@ import {
 
 import { MyContext } from "context";
 
+import { Modal } from "./Modal";
+
 import * as S from "./style";
 
 export function Header() {
@@ -16,6 +18,9 @@ export function Header() {
   const { showLeftOption, setShowLeftOption } = useContext(MyContext);
 
   const handleModalTrigger = () => setShowLeftOption(!showLeftOption);
+  const openModal = () => setProfileModal(true);
+  const closeModal = () => setProfileModal(false);
+
   const handleMProfileTrigger = () => setProfileModal(!profileModal);
 
   return (
@@ -40,6 +45,11 @@ export function Header() {
           <MdOutlineKeyboardArrowDown className="arrow-svg" />
         )}
       </button>
+      <Modal
+        isModalOpen={profileModal}
+        closeModal={closeModal}
+        openModal={openModal}
+      />
     </S.Header>
   );
 }

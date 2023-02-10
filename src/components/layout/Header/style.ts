@@ -12,6 +12,7 @@ export const Header = styled.div`
   align-items: center;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  z-index: 1;
 
   button {
     gap: 1rem;
