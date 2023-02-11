@@ -1,10 +1,9 @@
-import { SearchSystem } from "components/data/Request-system";
-import { Layout } from "components/Layout";
+import { SignUp } from "components/data/User-access";
 
 export default function Home() {
   return (
-    <Layout>
-      <SearchSystem />
-    </Layout>
+    <>
+      <SignUp />
+    </>
   );
 }

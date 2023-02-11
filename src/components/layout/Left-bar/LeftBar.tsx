@@ -14,7 +14,7 @@ export function LeftBar() {
       <Button
         content="Pesquisar imóvel"
         icon={<BiSearchAlt2 />}
-        onClick={() => handleRedirectPath("/")}
+        onClick={() => handleRedirectPath("/search")}
       />
       <Button
         content="Regitrar imóvel"
