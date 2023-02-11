@@ -14,20 +14,21 @@ export function SignInForm() {
 
   const renderInputField = (
     fieldName: string,
-    placeholder: string,
-    type = "text"
+    type: "text" | "email" | "password",
+    labelText: string
   ) => (
     <label>
-      <Input name={fieldName} placeholder={placeholder} type={type} />
+      {labelText}:
+      <Input name={fieldName} type={type} />
     </label>
   );
 
   return (
     <S.Form>
-      <h1>signin form</h1>
       <Form ref={formRef} onSubmit={handleFormSubmit}>
-        {renderInputField("userEmail", "Digite seu endereço de e-mail")}
-        {renderInputField("userPassword", "Digite sua senha")}
+        <h1>Entrar</h1>
+        {renderInputField("userEmail", "email", "E-mail")}
+        {renderInputField("userPassword", "password", "Senha")}
         <button type="submit">Entrar</button>
       </Form>
     </S.Form>

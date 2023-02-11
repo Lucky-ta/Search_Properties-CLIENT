@@ -4,9 +4,7 @@ import { useField } from "@unform/core";
 
 import { IInputProps } from "./interface";
 
-import * as S from "./style";
-
-export function Input({ name, placeholder, ...rest }: IInputProps) {
+export function Input({ name, type, ...rest }: IInputProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const { fieldName, registerField, defaultValue, error } = useField(name);
 
@@ -19,9 +17,9 @@ export function Input({ name, placeholder, ...rest }: IInputProps) {
   }, [fieldName, registerField]);
 
   return (
-    <S.Input>
-      <input defaultValue={defaultValue} ref={inputRef} {...rest} />
+    <>
+      <input type={type} defaultValue={defaultValue} ref={inputRef} {...rest} />
       {error && <span style={{ color: "red" }}>{error}</span>}
-    </S.Input>
+    </>
   );
 }

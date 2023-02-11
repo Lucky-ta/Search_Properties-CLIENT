@@ -14,21 +14,22 @@ export function SignUpForm() {
 
   const renderInputField = (
     fieldName: string,
-    placeholder: string,
-    type = "text"
+    type: "text" | "email" | "password",
+    labelText: string
   ) => (
     <label>
-      <Input name={fieldName} placeholder={placeholder} type={type} />
+      {labelText}:
+      <Input name={fieldName} type={type} />
     </label>
   );
 
   return (
     <S.Form>
-      <h1>Criar conta</h1>
       <Form ref={formRef} onSubmit={handleFormSubmit}>
-        {renderInputField("userName", "Digite seu nome completo")}
-        {renderInputField("userEmail", "Digite seu endereço de e-mail")}
-        {renderInputField("userPassword", "Crie uma senha", "password")}
+        <h1>Criar conta</h1>
+        {renderInputField("userName", "text", "Nome")}
+        {renderInputField("userEmail", "email", "E-mail")}
+        {renderInputField("userPassword", "password", "Senha")}
         <button type="submit">Criar conta</button>
       </Form>
     </S.Form>
