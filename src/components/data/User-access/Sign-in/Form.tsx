@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-import { Input } from "components/data/Input";
+import { Input } from "components/Input";
 import { Loading } from "components/Loading";
 
 import { FormHandles } from "@unform/core";

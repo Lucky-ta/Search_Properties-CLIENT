@@ -1,12 +1,12 @@
 import { useRef, useState } from "react";
 
-import { Input } from "components/data/Input";
+import { Input } from "components/Input";
 import { Loading } from "components/Loading";
 
 import { FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
 
-import { IFormShape } from "interfaces";
+import { IUserShape } from "interfaces";
 
 import { yupFormValidation } from "utils/YupValidation";
 
@@ -27,7 +27,7 @@ export function SignUpForm() {
     </label>
   );
 
-  const handleFormSubmit = async (formData: IFormShape) => {
+  const handleFormSubmit = async (formData: IUserShape) => {
     setIsLoading(true);
     const validationResult = await yupFormValidation(formData);
 

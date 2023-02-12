@@ -1,3 +1,3 @@
-import { IFormShape } from "./interfaces";
+import { IUserShape } from "./interfaces";
 
-export type { IFormShape };
+export type { IUserShape };

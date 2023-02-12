@@ -1,9 +1,9 @@
-import { IFormShape } from "interfaces";
+import { IUserShape } from "interfaces";
 
 import { schema } from "./yupSchemas";
 import * as Yup from "yup";
 
-export const yupFormValidation = async (formData: IFormShape) => {
+export const yupFormValidation = async (formData: IUserShape) => {
     try {
         await schema.validate(formData, { abortEarly: false });
     } catch (e: any) {
