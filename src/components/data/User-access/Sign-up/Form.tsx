@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 
 import { Input } from "components/data/Input";
+import { Loading } from "components/Loading";
 
 import { FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
@@ -10,7 +11,6 @@ import { IFormShape } from "interfaces";
 import { yupFormValidation } from "utils/YupValidation";
 
 import * as S from "../style";
-import { Loading } from "components/Loading";
 
 export function SignUpForm() {
   const [isLoading, setIsLoading] = useState(false);
