@@ -1,4 +1,145 @@
 {
   "user": [],
-  "property": []
+  "property": [
+    {
+      "name": "HUMATIA",
+      "propertyId": "123456",
+      "registeredBy": {
+        "name": "Lucas",
+        "email": "email@gmail.com"
+      },
+      "isAvailable": false,
+      "id": 1
+    },
+    {
+      "name": "NEW APP",
+      "propertyId": "123456",
+      "registeredBy": {
+        "name": "Lucas",
+        "email": "email@gmail.com"
+      },
+      "isAvailable": true,
+      "id": 2
+    },
+    {
+      "name": "NEW APP",
+      "propertyId": "123456",
+      "registeredBy": {
+        "name": "Lucas",
+        "email": "email@gmail.com"
+      },
+      "isAvailable": true,
+      "id": 3
+    },
+    {
+      "name": "NEW APP",
+      "propertyId": "123456",
+      "registeredBy": {
+        "name": "Lucas",
+        "email": "email@gmail.com"
+      },
+      "isAvailable": true,
+      "id": 4
+    },
+    {
+      "name": "NEW APP",
+      "propertyId": "123456",
+      "registeredBy": {
+        "name": "Lucas",
+        "email": "email@gmail.com"
+      },
+      "isAvailable": true,
+      "id": 5
+    },
+    {
+      "name": "NEW APP",
+      "propertyId": "123456",
+      "registeredBy": {
+        "name": "Lucas",
+        "email": "email@gmail.com"
+      },
+      "isAvailable": true,
+      "id": 6
+    },
+    {
+      "name": "NEW APP",
+      "propertyId": "123456",
+      "registeredBy": {
+        "name": "Lucas",
+        "email": "email@gmail.com"
+      },
+      "isAvailable": true,
+      "id": 7
+    },
+    {
+      "name": "NEW APP",
+      "propertyId": "123456",
+      "registeredBy": {
+        "name": "Lucas",
+        "email": "email@gmail.com"
+      },
+      "isAvailable": true,
+      "id": 8
+    },
+    {
+      "name": "NEW APP",
+      "propertyId": "123456",
+      "registeredBy": {
+        "name": "Lucas",
+        "email": "email@gmail.com"
+      },
+      "isAvailable": true,
+      "id": 9
+    },
+    {
+      "name": "NEW APP",
+      "propertyId": "123456",
+      "registeredBy": {
+        "name": "Lucas",
+        "email": "email@gmail.com"
+      },
+      "isAvailable": true,
+      "id": 10
+    },
+    {
+      "name": "NEW APP",
+      "propertyId": "123456",
+      "registeredBy": {
+        "name": "Lucas",
+        "email": "email@gmail.com"
+      },
+      "isAvailable": true,
+      "id": 11
+    },
+    {
+      "name": "NEW APP",
+      "propertyId": "123456",
+      "registeredBy": {
+        "name": "Lucas",
+        "email": "email@gmail.com"
+      },
+      "isAvailable": true,
+      "id": 12
+    },
+    {
+      "name": "NEW APP",
+      "propertyId": "123456",
+      "registeredBy": {
+        "name": "Lucas",
+        "email": "email@gmail.com"
+      },
+      "isAvailable": true,
+      "id": 13
+    },
+    {
+      "name": "NEW APP",
+      "propertyId": "123456",
+      "registeredBy": {
+        "name": "Lucas",
+        "email": "email@gmail.com"
+      },
+      "isAvailable": true,
+      "id": 14
+    }
+  ]
 }

@@ -4,6 +4,7 @@ export const GlobalStyle = createGlobalStyle`
 
 * {
     transition: all 0.2s;
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

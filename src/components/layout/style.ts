@@ -9,9 +9,21 @@ export const Layout = styled.div`
 
   .content {
     display: flex;
+    height: 100%;
   }
 
   .container {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    padding: 1rem;
+    gap: 2rem;
+    overflow: auto;
+
+    .search-result {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
   }
 `;
