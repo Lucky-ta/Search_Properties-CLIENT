@@ -8,7 +8,7 @@ import { Form } from "@unform/web";
 
 import { IUserShape } from "interfaces";
 
-import { yupFormValidation } from "utils/YupValidation";
+import { yupUserFormValidation } from "utils/YupValidation";
 
 import * as S from "../style";
 
@@ -29,7 +29,7 @@ export function SignUpForm() {
 
   const handleFormSubmit = async (formData: IUserShape) => {
     setIsLoading(true);
-    const validationResult = await yupFormValidation(formData);
+    const validationResult = await yupUserFormValidation(formData);
 
     if (!validationResult) {
       console.log(`Created user: ${formData}`);

@@ -1,3 +1,3 @@
-import { yupFormValidation } from "./yupValidations";
+import { yupUserFormValidation, yupPropertyFormValidation } from "./yupValidations";
 
-export { yupFormValidation };
+export { yupUserFormValidation, yupPropertyFormValidation };

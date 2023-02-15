@@ -1,5 +1,12 @@
 {
-  "user": [],
+  "user": [
+    {
+      "name": "Lucas",
+      "email": "someEmail@gmail.com",
+      "password": "123456789",
+      "id": 1
+    }
+  ],
   "property": [
     {
       "name": "NEW APP",

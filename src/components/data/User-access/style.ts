@@ -26,6 +26,7 @@ export const Form = styled.div`
     align-items: flex-start;
     width: 100%;
     max-width: 25rem;
+    min-width: 25rem;
     padding: 3rem;
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);

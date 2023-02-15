@@ -1,11 +1,30 @@
 import { IUserShape } from "interfaces";
 
-import { schema } from "./yupSchemas";
+import { userSchema, propertySchema } from "./yupSchemas";
 import * as Yup from "yup";
 
-export const yupFormValidation = async (formData: IUserShape) => {
+export const yupUserFormValidation = async (formData: IUserShape) => {
     try {
-        await schema.validate(formData, { abortEarly: false });
+        await userSchema.validate(formData, { abortEarly: false });
+    } catch (e: any) {
+        if (e instanceof Yup.ValidationError) {
+            const errorMessages: Record<string, string> = {};
+
+            e.inner.forEach((error) => {
+                if (error.path) {
+                    errorMessages[error.path] = error.message;
+                }
+            });
+
+            return errorMessages;
+        }
+    }
+};
+
+
+export const yupPropertyFormValidation = async (formData: IUserShape) => {
+    try {
+        await propertySchema.validate(formData, { abortEarly: false });
     } catch (e: any) {
         if (e instanceof Yup.ValidationError) {
             const errorMessages: Record<string, string> = {};

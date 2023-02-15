@@ -6,11 +6,12 @@ import { Loading } from "components/Loading";
 import { FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
 
-import { yupFormValidation } from "utils/YupValidation";
+import { yupUserFormValidation } from "utils/YupValidation";
 
-import { IFormShape } from "interfaces";
+import { IUserShape } from "interfaces";
 
 import * as S from "../style";
+import { UserApi } from "services/api";
 
 export function SignInForm() {
   const [isLoading, setIsLoading] = useState(false);
@@ -27,13 +28,13 @@ export function SignInForm() {
     </label>
   );
 
-  const handleFormSubmit = async (formData: IFormShape) => {
+  const handleFormSubmit = async (formData: IUserShape) => {
     setIsLoading(true);
-    const validationResult = await yupFormValidation(formData);
+    const validationResult = await yupUserFormValidation(formData);
 
     if (!validationResult) {
-      console.log(`Valid user: ${formData}`);
-      // API REQUEST - VALIDATE USER AND GET TOKEN
+      const userRoutes = new UserApi();
+
       formRef.current?.setErrors({});
       setIsLoading(false);
     } else {
