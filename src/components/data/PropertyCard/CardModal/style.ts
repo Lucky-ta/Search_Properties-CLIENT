@@ -26,7 +26,7 @@ export const CardModal = styled(ReactModal) <IStyledCardModalProps>`
   }
 
   h2 {
-    margin-bottom: 1.5rem;
+    padding-bottom: 1.2rem;
     font-size: 2rem;
     font-weight: bold;
     color: #222;
@@ -34,7 +34,6 @@ export const CardModal = styled(ReactModal) <IStyledCardModalProps>`
 
   div {
     display: flex;
-    margin-bottom: 2rem;
 
     .regiteredBy {
       display: flex;
@@ -42,6 +41,8 @@ export const CardModal = styled(ReactModal) <IStyledCardModalProps>`
       align-items: flex-start;
       justify-content: center;
       text-align: center;
+        margin-bottom: 2rem;
+
 
       span {
         font-size: 1rem;
@@ -56,8 +57,8 @@ export const CardModal = styled(ReactModal) <IStyledCardModalProps>`
       color: #aaa;
 
       @media (max-width: 340px) {
-    display: none;
-  }
+        display: none;
+      }
     }
 
     h3 {
@@ -94,7 +95,6 @@ export const CardModal = styled(ReactModal) <IStyledCardModalProps>`
     }
 
     h1 {
-      margin-bottom: 2rem;
       font-size: 2rem;
       font-weight: bold;
       color: #222;
@@ -123,7 +123,6 @@ export const CardModal = styled(ReactModal) <IStyledCardModalProps>`
     }
 
     button {
-      margin-top: 2rem;
       padding: 1rem 2rem;
       border: none;
       border-radius: 0.8rem;

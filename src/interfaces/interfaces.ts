@@ -9,11 +9,8 @@ export interface IPropertyShape {
     propertyId: string;
     registeredBy: IUserShape;
     isAvailable: boolean;
-}
-
-
-export interface IModalProps {
-    isModalOpen: boolean;
-    closeModal: () => void;
-    openModal: () => void;
+    address: {
+        city: string;
+        street: string;
+    }
 }

@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export function PropertyCard({ property }: IPropertyCardProps) {
   const [cardModal, setCardModal] = useState(false);
-  const { name, propertyId, isAvailable, registeredBy } = property;
+  const { name, propertyId, isAvailable, registeredBy, address } = property;
 
   const handleModalTrigger = () => setCardModal(!cardModal);
   const openModal = () => setCardModal(true);
@@ -24,6 +24,7 @@ export function PropertyCard({ property }: IPropertyCardProps) {
         </span>
       </div>
       <h2>{name}</h2>
+      <span className="address">{`${address.city} - ${address.street}`}</span>
       <div className="card-footer">
         {isAvailable ? (
           <div className="green-bar" />

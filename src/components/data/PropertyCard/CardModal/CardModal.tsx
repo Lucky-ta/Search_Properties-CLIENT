@@ -16,7 +16,7 @@ export function CardModal({
   openModal,
   property,
 }: ICardModalProps) {
-  const { name, isAvailable, propertyId, registeredBy } = property;
+  const { isAvailable, registeredBy } = property;
   const [isLoading, setIsLoading] = useState(false);
   const [availability, setAvailability] = useState(isAvailable);
   const formRef = useRef(null);
@@ -60,6 +60,8 @@ export function CardModal({
       <Form ref={formRef} onSubmit={handleFormSubmit} initialData={property}>
         {renderInputField("name", "text", "Nome")}
         {renderInputField("propertyId", "text", "ID")}
+        {renderInputField("address.city", "text", "Cidade")}
+        {renderInputField("address.street", "text", "Rua")}
         <div>
           <button
             className="enable"

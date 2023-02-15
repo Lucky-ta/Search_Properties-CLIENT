@@ -2,13 +2,17 @@
   "user": [],
   "property": [
     {
-      "name": "HUMATIA",
+      "name": "NEW APP",
       "propertyId": "123456",
       "registeredBy": {
         "name": "Lucas",
         "email": "email@gmail.com"
       },
-      "isAvailable": false,
+      "address": {
+        "city": "POA",
+        "street": "humaita"
+      },
+      "isAvailable": true,
       "id": 1
     },
     {
@@ -18,7 +22,11 @@
         "name": "Lucas",
         "email": "email@gmail.com"
       },
-      "isAvailable": true,
+      "address": {
+        "city": "POA",
+        "street": "humaita"
+      },
+      "isAvailable": false,
       "id": 2
     },
     {
@@ -28,7 +36,11 @@
         "name": "Lucas",
         "email": "email@gmail.com"
       },
-      "isAvailable": true,
+      "address": {
+        "city": "POA",
+        "street": "humaita"
+      },
+      "isAvailable": false,
       "id": 3
     },
     {
@@ -38,7 +50,11 @@
         "name": "Lucas",
         "email": "email@gmail.com"
       },
-      "isAvailable": true,
+      "address": {
+        "city": "POA",
+        "street": "humaita"
+      },
+      "isAvailable": false,
       "id": 4
     },
     {
@@ -47,6 +63,10 @@
       "registeredBy": {
         "name": "Lucas",
         "email": "email@gmail.com"
+      },
+      "address": {
+        "city": "POA",
+        "street": "humaita"
       },
       "isAvailable": true,
       "id": 5
@@ -58,88 +78,12 @@
         "name": "Lucas",
         "email": "email@gmail.com"
       },
+      "address": {
+        "city": "POA",
+        "street": "humaita"
+      },
       "isAvailable": true,
       "id": 6
-    },
-    {
-      "name": "NEW APP",
-      "propertyId": "123456",
-      "registeredBy": {
-        "name": "Lucas",
-        "email": "email@gmail.com"
-      },
-      "isAvailable": true,
-      "id": 7
-    },
-    {
-      "name": "NEW APP",
-      "propertyId": "123456",
-      "registeredBy": {
-        "name": "Lucas",
-        "email": "email@gmail.com"
-      },
-      "isAvailable": true,
-      "id": 8
-    },
-    {
-      "name": "NEW APP",
-      "propertyId": "123456",
-      "registeredBy": {
-        "name": "Lucas",
-        "email": "email@gmail.com"
-      },
-      "isAvailable": true,
-      "id": 9
-    },
-    {
-      "name": "NEW APP",
-      "propertyId": "123456",
-      "registeredBy": {
-        "name": "Lucas",
-        "email": "email@gmail.com"
-      },
-      "isAvailable": true,
-      "id": 10
-    },
-    {
-      "name": "NEW APP",
-      "propertyId": "123456",
-      "registeredBy": {
-        "name": "Lucas",
-        "email": "email@gmail.com"
-      },
-      "isAvailable": true,
-      "id": 11
-    },
-    {
-      "name": "NEW APP",
-      "propertyId": "123456",
-      "registeredBy": {
-        "name": "Lucas",
-        "email": "email@gmail.com"
-      },
-      "isAvailable": true,
-      "id": 12
-    },
-    {
-      "name": "NEW APP",
-      "propertyId": "123456",
-      "registeredBy": {
-        "name": "Lucas",
-        "email": "email@gmail.com"
-      },
-      "isAvailable": true,
-      "id": 13
-    },
-    {
-      "name": "NEW APP",
-      "propertyId": "123456",
-      "registeredBy": {
-        "name": "Lucas",
-        "email": "email@gmail.com"
-      },
-      "isAvailable": true,
-      "id": 14
     }
   ]
 }
