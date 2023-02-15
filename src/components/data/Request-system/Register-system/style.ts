@@ -5,7 +5,8 @@ export const RegisterSystem = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding-top: 5rem;
+  padding-top: 3rem;
+  height: 100%;
 
   h1 {
     border-bottom: 1px solid gray;

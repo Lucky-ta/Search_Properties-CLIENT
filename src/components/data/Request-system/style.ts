@@ -5,7 +5,7 @@ export const RequestSystem = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding-top: 5rem;
+  padding-top: 3rem;
 
   h1 {
     border-bottom: 1px solid gray;
