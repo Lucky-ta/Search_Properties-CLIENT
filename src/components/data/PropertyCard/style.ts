@@ -5,9 +5,9 @@ export const PropertyCard = styled.div`
   max-width: 30rem;
   background-color: white;
   border: 1px solid #e6e6e6;
+  border-radius: 4px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   padding: 16px;
-  
 
   .card-header {
     display: flex;
@@ -33,7 +33,7 @@ export const PropertyCard = styled.div`
       border-radius: 2px;
       display: inline-block;
       padding: 0.4rem;
-      
+
       background-color: #1abc9c;
       color: white;
       &.unavailable {

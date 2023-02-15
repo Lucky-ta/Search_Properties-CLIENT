@@ -2,7 +2,7 @@ import ReactModal from "react-modal";
 
 import styled from "styled-components";
 
-export const Modal = styled(ReactModal)`
+export const UserModal = styled(ReactModal)`
   position: fixed;
   top: 5%;
   right: 0%;

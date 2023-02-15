@@ -1,12 +1,16 @@
 import { BsPersonCircle } from "public/react-icons";
 
-import { IModalProps } from "./interface";
+import { IUserModalProps } from "./interface";
 
 import * as S from "./style";
 
-export function Modal({ isModalOpen, closeModal, openModal }: IModalProps) {
+export function UserModal({
+  isModalOpen,
+  closeModal,
+  openModal,
+}: IUserModalProps) {
   return (
-    <S.Modal
+    <S.UserModal
       isOpen={isModalOpen}
       onRequestClose={closeModal}
       onAfterOpen={openModal}
@@ -21,6 +25,6 @@ export function Modal({ isModalOpen, closeModal, openModal }: IModalProps) {
         <button type="button">Registros</button>
         <span className="email-span">Username@gmail.com</span>
       </div>
-    </S.Modal>
+    </S.UserModal>
   );
 }

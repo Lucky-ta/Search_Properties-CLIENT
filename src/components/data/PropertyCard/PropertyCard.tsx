@@ -3,10 +3,16 @@ import { IPropertyCardProps } from "./interface";
 import { BsPersonCircle, VscGear } from "public/react-icons/index";
 
 import * as S from "./style";
+import { CardModal } from "./CardModal";
+import { useState } from "react";
 
 export function PropertyCard({ property }: IPropertyCardProps) {
+  const [cardModal, setCardModal] = useState(false);
   const { name, propertyId, isAvailable, registeredBy } = property;
-  console.log(property);
+
+  const handleModalTrigger = () => setCardModal(!cardModal);
+  const openModal = () => setCardModal(true);
+  const closeModal = () => setCardModal(false);
 
   return (
     <S.PropertyCard>
@@ -26,8 +32,14 @@ export function PropertyCard({ property }: IPropertyCardProps) {
         )}
 
         <span className="property-id">{`ID: ${propertyId}`}</span>
-        <VscGear />
+        <VscGear onClick={handleModalTrigger} />
       </div>
+      <CardModal
+        isModalOpen={cardModal}
+        closeModal={closeModal}
+        openModal={openModal}
+        property={property}
+      />
     </S.PropertyCard>
   );
 }

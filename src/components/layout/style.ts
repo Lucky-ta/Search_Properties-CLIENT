@@ -19,6 +19,7 @@ export const Layout = styled.div`
     padding: 1rem;
     gap: 2rem;
     overflow: auto;
+    
 
     .search-result {
       display: grid;

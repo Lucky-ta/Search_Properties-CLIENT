@@ -9,22 +9,22 @@ import {
 
 import { MyContext } from "context";
 
-import { Modal } from "./Modal";
+import { UserModal } from "./UserModal";
 
 import * as S from "./style";
 
 export function Header() {
-  const [profileModal, setProfileModal] = useState(false);
+  const [userModal, setUserModal] = useState(false);
   const { showLeftOption, setShowLeftOption } = useContext(MyContext);
 
   const handleModalTrigger = () => setShowLeftOption(!showLeftOption);
-  const openModal = () => setProfileModal(true);
-  const closeModal = () => setProfileModal(false);
+  const openModal = () => setUserModal(true);
+  const closeModal = () => setUserModal(false);
 
-  const handleMProfileTrigger = () => setProfileModal(!profileModal);
+  const handleMProfileTrigger = () => setUserModal(!userModal);
 
   return (
-    <S.Header>
+    <S.Header modalHeaderStatus={userModal}>
       <div>
         <button onClick={handleModalTrigger} type="button">
           {<GoThreeBars />}
@@ -39,14 +39,14 @@ export function Header() {
       >
         {<BsPersonCircle />}
         <span>User name</span>
-        {profileModal ? (
+        {userModal ? (
           <MdOutlineKeyboardArrowUp className="arrow-svg" />
         ) : (
           <MdOutlineKeyboardArrowDown className="arrow-svg" />
         )}
       </button>
-      <Modal
-        isModalOpen={profileModal}
+      <UserModal
+        isModalOpen={userModal}
         closeModal={closeModal}
         openModal={openModal}
       />

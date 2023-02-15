@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 const BACK_GROUND_LIGHTGRAY = "#eff1f4";
 
-export const Header = styled.div`
+interface IStyledHeader {
+  modalHeaderStatus: boolean;
+}
+
+export const Header = styled.div<IStyledHeader>`
   display: flex;
   background-color: #ffffff;
   justify-content: space-between;
@@ -12,7 +16,9 @@ export const Header = styled.div`
   align-items: center;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  z-index: 1;
+
+
+  z-index: ${({ modalHeaderStatus }) => modalHeaderStatus && 1};
 
   button {
     gap: 1rem;

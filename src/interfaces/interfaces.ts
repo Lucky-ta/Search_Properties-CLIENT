@@ -10,3 +10,10 @@ export interface IPropertyShape {
     registeredBy: IUserShape;
     isAvailable: boolean;
 }
+
+
+export interface IModalProps {
+    isModalOpen: boolean;
+    closeModal: () => void;
+    openModal: () => void;
+}
