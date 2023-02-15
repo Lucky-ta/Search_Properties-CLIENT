@@ -1,16 +1,16 @@
 import { useRef, useState } from "react";
 
-import { MdOutlineDone } from "public/react-icons";
-
 import { Loading } from "components/Loading";
 import { Input } from "components/Input";
 
+import { FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
 
-import * as S from "./style";
 import { yupPropertyFormValidation } from "utils/YupValidation";
+
 import { IPropertyShape } from "interfaces";
-import { FormHandles } from "@unform/core";
+
+import * as S from "./style";
 
 export function RegisterSystem() {
   const [isLoading, setIsLoading] = useState(false);
