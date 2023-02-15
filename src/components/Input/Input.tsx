@@ -12,9 +12,9 @@ export function Input({ name, type, ...rest }: IInputProps) {
     registerField({
       name: fieldName,
       ref: inputRef.current,
-      path: "value",
+      path: type !== "checkbox" ? "value" : "checked",
     });
-  }, [fieldName, registerField]);
+  }, [fieldName, registerField, type]);
 
   return (
     <>

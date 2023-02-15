@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-import { HiOutlinePlusSm } from "public/react-icons";
+import { MdOutlineDone } from "public/react-icons";
 
 import { Loading } from "components/Loading";
 import { Input } from "components/Input";
@@ -18,11 +18,11 @@ export function RegisterSystem() {
 
   const renderInputField = (
     fieldName: string,
-    type: "text" | "email" | "password",
+    type: string,
     labelText: string
   ) => (
-    <label>
-      {labelText}:
+    <label className={type}>
+      {labelText}
       <Input name={fieldName} type={type} />
     </label>
   );
@@ -31,10 +31,11 @@ export function RegisterSystem() {
     setIsLoading(true);
 
     const validationResult = await yupPropertyFormValidation(formData);
-    console.log(validationResult);
 
     if (!validationResult) {
       setIsLoading(false);
+      // API REQUEST
+      formRef.current?.reset();
       formRef.current?.setErrors({});
     } else {
       formRef.current?.setErrors(validationResult);
@@ -50,6 +51,11 @@ export function RegisterSystem() {
         {renderInputField("propertyId", "text", "ID")}
         {renderInputField("address.city", "text", "Cidade")}
         {renderInputField("address.street", "text", "Rua")}
+        {renderInputField(
+          "isAvailable",
+          "checkbox",
+          "O imóvel esta disponível?"
+        )}
         <button type="submit">{isLoading ? <Loading /> : "Registrar"}</button>
       </Form>
     </S.RegisterSystem>

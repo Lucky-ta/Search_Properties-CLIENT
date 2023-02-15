@@ -26,6 +26,20 @@ export const RegisterSystem = styled.div`
     margin-bottom: 0.5rem;
     display: flex;
     flex-direction: column;
+
+    &.checkbox {
+        flex-direction: row;
+        flex-flow: row-reverse;
+        cursor: pointer;
+        gap: 1rem;
+        justify-content: start;
+    }
+
+    input[type="checkbox"] {
+        cursor: pointer;
+        color: green;
+    }
+
   }
 
   input {
