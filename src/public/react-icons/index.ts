@@ -1,7 +1,6 @@
 import {
     MdOutlineKeyboardArrowDown,
     MdOutlineKeyboardArrowUp,
-    MdOutlineDone
 } from "react-icons/md";
 import { IoCreateOutline } from "react-icons/io5";
 import { HiOutlinePlusSm } from "react-icons/hi";
@@ -14,7 +13,6 @@ import { VscGear } from "react-icons/vsc";
 export {
     MdOutlineKeyboardArrowDown,
     MdOutlineKeyboardArrowUp,
-    MdOutlineDone,
     IoCreateOutline,
     HiOutlinePlusSm,
     BsPersonCircle,
