@@ -35,6 +35,13 @@ export function UserModal({
         <button onClick={() => handleRedirectButton("/register")} type="button">
           Registros
         </button>
+        <button
+          className="exit-button"
+          onClick={() => handleRedirectButton("/signIn")}
+          type="button"
+        >
+          Sair
+        </button>
         <span className="email-span">Username@gmail.com</span>
       </div>
     </S.UserModal>

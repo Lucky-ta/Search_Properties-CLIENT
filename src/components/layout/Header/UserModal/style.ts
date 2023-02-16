@@ -53,12 +53,17 @@ export const UserModal = styled(ReactModal)`
     &:active {
       transform: translateY(2px);
     }
+
+    &.exit-button {
+      background-color: red;
+      margin: 0;
+      margin-top: 2rem;
+    }
   }
 
   div {
     display: flex;
     flex-direction: column;
-    padding-bottom: 2rem;
     align-items: center;
   }
 

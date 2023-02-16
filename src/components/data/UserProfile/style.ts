@@ -33,7 +33,7 @@ export const UserProfile = styled.div`
 
       @media (max-width: 800px) {
         grid-template-columns: 1fr;
-  }
+      }
     }
 
     label {
@@ -87,6 +87,21 @@ export const UserProfile = styled.div`
     button:hover {
       background-color: #007acc;
       box-shadow: 0px 0px 5px rgba(0, 162, 255, 0.5);
+    }
+  }
+
+  button[type="button"] {
+    width: 10rem;
+    padding: 0.3rem;
+    right: 1rem;
+    margin: auto;
+    background-color: grey;
+    margin-right: 0;
+    margin-top: 1rem;
+
+    &:hover {
+        background-color: red;
+        color: white;
     }
   }
 

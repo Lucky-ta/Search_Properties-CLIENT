@@ -45,6 +45,8 @@ export function UserProfile({ user }: IUserProfileProps) {
       setIsLoading(false);
     }
   };
+
+  const handleDeleteUser = () => console.log("Delete account");
   return (
     <S.UserProfile>
       <h1>Meu perfil</h1>
@@ -58,6 +60,9 @@ export function UserProfile({ user }: IUserProfileProps) {
             {renderInputField("password", "password", "Senha")}
           </div>
           <button type="submit">{isLoading ? <Loading /> : "Salvar"}</button>
+          <button type="button" onClick={handleDeleteUser}>
+            Excluir conta
+          </button>
         </Form>
       </div>
     </S.UserProfile>

@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 const BACK_GROUND_LIGHTGRAY = "#eff1f4";
 
-export const Button = styled.button`
+interface IButtonProps {
+  isSelected: boolean;
+}
+
+export const Button = styled.button<IButtonProps>`
   gap: 0.6rem;
   padding: 1rem;
   border-radius: 4px;
@@ -15,6 +19,8 @@ export const Button = styled.button`
   svg {
     font-size: 1.3rem;
   }
+
+  background-color: ${props => props.isSelected && BACK_GROUND_LIGHTGRAY};
 
   &:hover {
     background-color: ${BACK_GROUND_LIGHTGRAY};
