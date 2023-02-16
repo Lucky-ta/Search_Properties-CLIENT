@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+import { theme } from "styles";
+const { colors } = theme;
+
 export const PropertyCard = styled.div`
   width: 100%;
   max-width: 30rem;
@@ -68,7 +71,7 @@ export const PropertyCard = styled.div`
     }
 
     .red-bar {
-      background-color: #e74c3c;
+      background-color: ${colors.cardDisabled};
       width: 70%;
       margin-bottom: 1rem;
     }

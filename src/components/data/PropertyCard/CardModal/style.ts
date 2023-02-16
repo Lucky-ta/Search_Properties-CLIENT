@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 import ReactModal from "react-modal";
 
+import { theme } from "styles";
+const { colors } = theme;
+
 interface IStyledCardModalProps {
-    isAvailable: boolean;
+  isAvailable: boolean;
 }
 
 export const CardModal = styled(ReactModal) <IStyledCardModalProps>`
@@ -41,12 +44,11 @@ export const CardModal = styled(ReactModal) <IStyledCardModalProps>`
       align-items: flex-start;
       justify-content: center;
       text-align: center;
-        margin-bottom: 2rem;
-
+      margin-bottom: 2rem;
 
       span {
         font-size: 1rem;
-        color: grey;
+        color: ${colors.secondary};
       }
     }
 
@@ -72,7 +74,8 @@ export const CardModal = styled(ReactModal) <IStyledCardModalProps>`
       margin-left: auto;
       font-size: 1.4rem;
       font-weight: bold;
-      color: ${({ isAvailable }) => (isAvailable ? "#4caf50" : "#f44336")};
+      color: ${({ isAvailable }) =>
+    isAvailable ? `${colors.cardEnable}` : `${colors.cardDisabled}`};
     }
   }
 
@@ -89,7 +92,7 @@ export const CardModal = styled(ReactModal) <IStyledCardModalProps>`
     }
 
     input {
-      border: 1px solid grey;
+      border: 1px solid ${colors.secondary};
       padding: 0.6rem;
       border-radius: 4px;
     }
@@ -109,14 +112,14 @@ export const CardModal = styled(ReactModal) <IStyledCardModalProps>`
 
       button.enable {
         background-color: ${({ isAvailable }) =>
-        isAvailable ? "#4caf50" : "grey"};
+    isAvailable ? `${colors.cardEnable}` : `${colors.secondary}`};
         border-top-right-radius: 0px;
         border-bottom-right-radius: 0px;
       }
 
       button.disable {
         background-color: ${({ isAvailable }) =>
-        isAvailable ? "grey" : "#e74c3c"};
+    isAvailable ? `${colors.secondary}` : `${colors.cardDisabled}`};
         border-top-left-radius: 0px;
         border-bottom-left-radius: 0px;
       }

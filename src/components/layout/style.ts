@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
+import { theme } from "styles";
+const { colors } = theme;
+
 export const Layout = styled.div`
   width: 100%;
   height: 100vh;
-  color: #3d495c;
-  background-color: #fafafa;
+  color: ${colors.primary};
+  background-color: ${colors.background};
 
 
 

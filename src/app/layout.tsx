@@ -1,4 +1,4 @@
-import StyledComponentsRegistry from "lib/registry";
+import StyledComponentsRegistry from "ssr-lib/StyledComponentsRegistry";
 
 import { MyProvider } from "context";
 
