@@ -1,3 +1,5 @@
+"use client";
+
 import { PropertyApi } from "services/api/propertyApi";
 
 import useSWR from "swr";

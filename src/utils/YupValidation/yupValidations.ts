@@ -1,4 +1,4 @@
-import { IUserShape } from "interfaces";
+import { IPropertyShape, IUserShape } from "interfaces";
 
 import { userSchema, propertySchema } from "./yupSchemas";
 import * as Yup from "yup";
@@ -22,7 +22,7 @@ export const yupUserFormValidation = async (formData: IUserShape) => {
 };
 
 
-export const yupPropertyFormValidation = async (formData: IUserShape) => {
+export const yupPropertyFormValidation = async (formData: IPropertyShape) => {
     try {
         await propertySchema.validate(formData, { abortEarly: false });
     } catch (e: any) {

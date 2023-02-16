@@ -1,3 +1,5 @@
+"use client";
+
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
@@ -40,6 +42,6 @@ li {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
   }
-
 `;

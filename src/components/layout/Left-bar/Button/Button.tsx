@@ -1,3 +1,5 @@
+"use client";
+
 import { IButtonProps } from "./interface";
 
 import * as S from "./style";

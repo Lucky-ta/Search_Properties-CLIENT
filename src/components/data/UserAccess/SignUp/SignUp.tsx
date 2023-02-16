@@ -1,3 +1,5 @@
+"use client";
+
 import { SignUpForm } from "./Form";
 
 import * as S from "../style";

@@ -1,4 +1,7 @@
-import { useRouter } from "next/router";
+"use client";
+
+import { useRouter } from "next/navigation";
+
 import { BsPersonCircle } from "public/react-icons";
 
 import { IUserModalProps } from "./interface";

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const RequestSystem = styled.div`
+export const SearchSystem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

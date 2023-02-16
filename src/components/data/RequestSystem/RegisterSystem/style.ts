@@ -7,6 +7,7 @@ export const RegisterSystem = styled.div`
   gap: 2rem;
   padding-top: 3rem;
   height: 100%;
+  margin-bottom: 6rem;
 
   h1 {
     border-bottom: 1px solid gray;

@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef, useState } from "react";
 
 import { Loading } from "components/Loading";
@@ -6,7 +8,7 @@ import { Input } from "components/Input";
 import { FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
 
-import { yupPropertyFormValidation } from "utils/YupValidation";
+import { yupPropertyFormValidation } from "utils";
 
 import { IPropertyShape } from "interfaces";
 

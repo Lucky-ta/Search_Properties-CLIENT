@@ -1,10 +1,14 @@
+"use client";
+
+import { useState } from "react";
+
 import { IPropertyCardProps } from "./interface";
 
 import { BsPersonCircle, VscGear } from "public/react-icons/index";
 
-import * as S from "./style";
 import { CardModal } from "./CardModal";
-import { useState } from "react";
+
+import * as S from "./style";
 
 export function PropertyCard({ property }: IPropertyCardProps) {
   const [cardModal, setCardModal] = useState(false);

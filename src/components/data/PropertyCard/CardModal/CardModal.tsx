@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef, useState } from "react";
+
 import { ICardModalProps } from "./interface";
 
 import { BsPersonCircle } from "public/react-icons/index";
@@ -8,7 +12,6 @@ import { Input } from "components/Input";
 import { Form } from "@unform/web";
 
 import * as S from "./style";
-import { useRef, useState } from "react";
 
 export function CardModal({
   isModalOpen,

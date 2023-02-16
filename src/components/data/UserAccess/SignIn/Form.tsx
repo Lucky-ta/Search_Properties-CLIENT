@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef, useState } from "react";
 
 import { Input } from "components/Input";
@@ -6,13 +8,15 @@ import { Loading } from "components/Loading";
 import { FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
 
-import { IUserShape } from "interfaces";
+import { yupUserFormValidation } from "utils";
 
-import { yupUserFormValidation } from "utils/YupValidation";
+import { UserApi } from "services/api";
+
+import { IUserShape } from "interfaces";
 
 import * as S from "../style";
 
-export function SignUpForm() {
+export function SignInForm() {
   const [isLoading, setIsLoading] = useState(false);
   const formRef = useRef<FormHandles>(null);
 
@@ -32,8 +36,8 @@ export function SignUpForm() {
     const validationResult = await yupUserFormValidation(formData);
 
     if (!validationResult) {
-      console.log(`Created user: ${formData}`);
-      // API REQUEST - CREATE USER
+      const userRoutes = new UserApi();
+
       formRef.current?.setErrors({});
       setIsLoading(false);
     } else {
@@ -45,12 +49,11 @@ export function SignUpForm() {
   return (
     <S.Form>
       <Form ref={formRef} onSubmit={handleFormSubmit}>
-        <h1>Criar conta</h1>
-        {renderInputField("name", "text", "Nome")}
+        <h1>Entrar</h1>
         {renderInputField("email", "email", "E-mail")}
         {renderInputField("password", "password", "Senha")}
         <button type="submit">
-          {isLoading ? <Loading /> : <span>Criar conta</span>}
+          {isLoading ? <Loading /> : <span>Entrar</span>}
         </button>
       </Form>
     </S.Form>
