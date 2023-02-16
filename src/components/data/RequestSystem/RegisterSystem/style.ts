@@ -52,12 +52,15 @@ export const RegisterSystem = styled.div`
     font-size: 1.2rem;
     background-color: #f5f5f5;
     transition: all 0.2s ease;
-  }
 
-  input:focus {
-    outline: none;
+    &:hover,
+    &:focus {
+      outline: none;
     border-color: #00a2ff;
     background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 162, 255, 0.5);
+
+    }
   }
 
   button {

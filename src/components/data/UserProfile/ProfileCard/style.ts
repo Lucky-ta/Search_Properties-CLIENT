@@ -41,15 +41,19 @@ export const ProfileCard = styled.div`
     gap: 0.4rem;
     height: 100%;
     justify-content: center;
-
+    
     h2 {
-      margin-top: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     svg {
         font-size: 1.2rem;
         color: black;
-        margin-right: 0.5rem;
+    }
+
+    span {
+        display: flex;
+        gap: 0.5rem;
     }
 
   }
