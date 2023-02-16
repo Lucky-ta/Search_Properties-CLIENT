@@ -44,4 +44,18 @@ li {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
   }
+
+  div.swr-message {
+    font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffcccc;
+  color: #ff0000;
+  padding: 1rem;
+  border-radius: 6px;
+  }
 `;

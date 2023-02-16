@@ -11,8 +11,8 @@ import { UseFetch } from "hooks";
 export default function Page() {
   const { data, error } = UseFetch();
 
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
+  if (error) return <div className="swr-message">Failed to load</div>;
+  if (!data) return <div className="swr-message">Loading...</div>;
 
   const renderRegisteredProperties = () => {
     return data.map((property: IPropertyShape, index: number) => (
