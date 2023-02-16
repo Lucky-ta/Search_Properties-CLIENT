@@ -26,6 +26,10 @@ export const LeftBar = styled.div`
     }
   }
 
-
+  @media (max-width: 530px) {
+    position: absolute;
+    width: 100%;
+    align-items: center;
+  }
 
 `;

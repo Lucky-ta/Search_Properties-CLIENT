@@ -60,4 +60,10 @@ export const Header = styled.div<IStyledHeader>`
       cursor: pointer;
     }
   }
+
+  @media (max-width: 450px) {
+        .title {
+          display: none;
+        }
+      }
 `;

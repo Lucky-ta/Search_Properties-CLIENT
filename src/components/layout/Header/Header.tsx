@@ -31,7 +31,7 @@ export function Header() {
         <button onClick={handleModalTrigger} type="button">
           {<GoThreeBars />}
         </button>
-        <span>Busca de imóveis</span>
+        <span className="title">Busca de imóveis</span>
       </div>
 
       <button
