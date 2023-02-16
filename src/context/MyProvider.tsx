@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import { PrefetchRoutes } from "utils";
+
 import { MyContext } from "./MyContext";
 
 interface MyProviderPropsShape {
@@ -10,6 +12,8 @@ interface MyProviderPropsShape {
 
 export function MyProvider({ children }: MyProviderPropsShape) {
   const [showLeftOption, setShowLeftOption] = useState(true);
+
+  PrefetchRoutes();
 
   const data = {
     showLeftOption,

@@ -22,7 +22,7 @@ export default function Page() {
   return (
     <Layout>
       <RegisterSystem />
-      <h2>Meus registros</h2>
+      <h2>{`Meus registros: (${data.length})`}</h2>
       <div className="search-result">{renderRegisteredProperties()}</div>
     </Layout>
   );

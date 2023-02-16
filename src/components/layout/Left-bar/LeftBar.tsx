@@ -12,6 +12,7 @@ export function LeftBar() {
   const router = useRouter();
 
   const handleRedirectPath = (path: string) => router.push(path);
+
   return (
     <S.LeftBar>
       <Button
