@@ -14,12 +14,11 @@ export class PropertyApi {
     }
   }
 
-  async editProperty(propertyId: number, editedProperty: IPropertyShape) {
+  async editProperty(propertyId: number, editedProperty: IPropertyShape, userToken: string) {
     try {
-      const { data } = await AXIOS_API.put(
-        `/property/${propertyId}`,
-        editedProperty
-      );
+      const { data } = await AXIOS_API.patch(`/property/${propertyId}`, editedProperty, {
+        headers: { Authorization: userToken }
+      });
       return data;
     } catch (error) {
       throw error;

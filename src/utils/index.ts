@@ -1,4 +1,5 @@
 import {
+    yupPropertyEditFormValidation,
     yupPropertyFormValidation,
     yupUserFormValidation,
     yupLoginValidation,
@@ -26,5 +27,6 @@ export {
     verifyToken,
     yupEditValidation,
     deleteAuthTokenFromCookies,
-    redirectToPath
+    redirectToPath,
+    yupPropertyEditFormValidation
 };

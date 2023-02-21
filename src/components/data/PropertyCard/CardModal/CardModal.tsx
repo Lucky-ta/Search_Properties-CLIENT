@@ -12,6 +12,9 @@ import { Input } from "components/Input";
 import { Form } from "@unform/web";
 
 import * as S from "./style";
+import { yupPropertyEditFormValidation } from "utils";
+import { IPropertyShape } from "interfaces";
+import { FormHandles } from "@unform/core";
 
 export function CardModal({
   isModalOpen,
@@ -22,7 +25,7 @@ export function CardModal({
   const { isAvailable, registeredBy } = property;
   const [isLoading, setIsLoading] = useState(false);
   const [availability, setAvailability] = useState(isAvailable);
-  const formRef = useRef(null);
+  const formRef = useRef<FormHandles>(null);
 
   const renderInputField = (
     fieldName: string,
@@ -36,8 +39,20 @@ export function CardModal({
   );
 
   const toggleAvailability = (value: boolean) => setAvailability(value);
-  const handleFormSubmit = async () => {
+
+  const handleFormSubmit = async (formData: IPropertyShape) => {
+    console.log(formData);
+    console.log(property);
+
     setIsLoading(true);
+    const formErrors = await yupPropertyEditFormValidation(formData);
+
+    if (formErrors) {
+      formRef.current?.setErrors(formErrors);
+      setIsLoading(false);
+      return;
+    }
+    console.log("request");
 
     // API REQUEST
     setIsLoading(false);

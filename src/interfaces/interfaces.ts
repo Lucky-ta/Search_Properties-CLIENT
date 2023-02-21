@@ -13,3 +13,14 @@ export interface IPropertyShape {
     city: string;
     street: string;
 }
+
+export interface IPropertyResponseApiShape {
+    name: string;
+    propertyId: string;
+    registeredBy: IUserShape;
+    isAvailable: boolean;
+    address: {
+        city: string;
+        street: string;
+    }
+}
