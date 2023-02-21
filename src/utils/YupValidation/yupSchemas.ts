@@ -19,8 +19,6 @@ export const userEditSchema = Yup.object().shape({
 export const propertySchema = Yup.object().shape({
     name: Yup.string().min(3).required("Nome é um campo obrigatório"),
     propertyId: Yup.string().min(6).required("ID é um campo obrigatório"),
-    address: Yup.object().shape({
-        city: Yup.string().min(2).required("Cidade é um campo obrigatório").label("city"),
-        street: Yup.string().min(2).required("Rua é um campo obrigatório").label("street"),
-    })
+    city: Yup.string().min(2).required("Cidade é um campo obrigatório"),
+    street: Yup.string().min(2).required("Rua é um campo obrigatório"),
 })

@@ -10,8 +10,6 @@ export interface IPropertyShape {
     propertyId: string;
     registeredBy: IUserShape;
     isAvailable: boolean;
-    address: {
-        city: string;
-        street: string;
-    }
+    city: string;
+    street: string;
 }

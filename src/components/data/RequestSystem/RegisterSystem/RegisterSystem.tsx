@@ -8,11 +8,12 @@ import { Input } from "components/Input";
 import { FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
 
-import { yupPropertyFormValidation } from "utils";
+import { getAuthTokenFromCookies, yupPropertyFormValidation } from "utils";
 
 import { IPropertyShape } from "interfaces";
 
 import * as S from "./style";
+import { PROPERTY_API } from "services/api";
 
 export function RegisterSystem() {
   const [isLoading, setIsLoading] = useState(false);
@@ -31,16 +32,25 @@ export function RegisterSystem() {
 
   const handleFormSubmit = async (formData: IPropertyShape) => {
     setIsLoading(true);
+    const formErrors = await yupPropertyFormValidation(formData);
 
-    const validationResult = await yupPropertyFormValidation(formData);
-
-    if (!validationResult) {
+    if (formErrors) {
+      formRef.current?.setErrors(formErrors);
       setIsLoading(false);
-      // API REQUEST
+      return;
+    }
+
+    try {
+      const userToken: any = getAuthTokenFromCookies();
+      await PROPERTY_API.createProperty(formData, userToken);
+      setIsLoading(false);
       formRef.current?.reset();
       formRef.current?.setErrors({});
-    } else {
-      formRef.current?.setErrors(validationResult);
+      return;
+    } catch (error: any) {
+      const errorMessage =
+        error.response?.data?.message || "Something went wrong";
+      formRef.current?.setErrors({ street: errorMessage });
       setIsLoading(false);
     }
   };
@@ -51,8 +61,8 @@ export function RegisterSystem() {
       <Form ref={formRef} onSubmit={handleFormSubmit}>
         {renderInputField("name", "text", "Nome")}
         {renderInputField("propertyId", "text", "ID")}
-        {renderInputField("address.city", "text", "Cidade")}
-        {renderInputField("address.street", "text", "Rua")}
+        {renderInputField("city", "text", "Cidade")}
+        {renderInputField("street", "text", "Rua")}
         {renderInputField(
           "isAvailable",
           "checkbox",
