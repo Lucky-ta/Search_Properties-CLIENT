@@ -8,3 +8,7 @@ export const getAuthTokenFromCookies = (): string | undefined => {
 export const setAuthTokenToCookies = (token: string): void => {
     Cookies.set("authToken", token, { expires: 1 });
 };
+
+export const deleteAuthTokenFromCookies = (): void => {
+    Cookies.remove("authToken");
+}

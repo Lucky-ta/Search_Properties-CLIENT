@@ -14,7 +14,7 @@ import { yupUserFormValidation } from "utils";
 
 import * as S from "../style";
 import { USER_API } from "services/api";
-import { redirectToPath } from "utils/redirectPath";
+import { redirectToPath } from "utils";
 import { useRouter } from "next/navigation";
 
 export function SignUpForm() {
@@ -38,7 +38,6 @@ export function SignUpForm() {
     const validationResult = await yupUserFormValidation(formData);
 
     if (!validationResult) {
-      console.log(`Created user: ${formData}`);
       await USER_API.createUser(formData);
       formRef.current?.setErrors({});
       setIsLoading(false);

@@ -1,15 +1,20 @@
 "use client";
 
 import { useContext, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { MyContext } from "context";
 
 import { FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
 
+import { ProfileCard } from "./ProfileCard/ProfileCard";
 import { Loading } from "components/Loading";
 import { Input } from "components/Input";
 
 import {
+  deleteAuthTokenFromCookies,
   getAuthTokenFromCookies,
+  redirectToPath,
   setAuthTokenToCookies,
   yupEditValidation,
 } from "utils";
@@ -17,13 +22,13 @@ import {
 import { IUserProfileProps } from "./interface";
 import { IUserShape } from "interfaces";
 
-import * as S from "./style";
-import { ProfileCard } from "./ProfileCard/ProfileCard";
 import { USER_API } from "services/api";
-import { MyContext } from "context";
+
+import * as S from "./style";
 
 export function UserProfile({ user }: IUserProfileProps) {
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
   const { setToken } = useContext(MyContext);
   const formRef = useRef<FormHandles>(null);
 
@@ -63,7 +68,19 @@ export function UserProfile({ user }: IUserProfileProps) {
     setIsLoading(false);
   };
 
-  const handleDeleteUser = () => console.log("Delete account");
+  const handleDeleteUser = async () => {
+    const userToken: any = getAuthTokenFromCookies();
+    try {
+      await USER_API.deleteUser(user.id, userToken);
+      deleteAuthTokenFromCookies();
+      redirectToPath(router, "/");
+    } catch (error: any) {
+      const errorMessage =
+        error.response?.data?.message || "Something went wrong";
+      formRef.current?.setErrors({ email: errorMessage });
+    }
+  };
+
   return (
     <S.UserProfile>
       <h1>Meu perfil</h1>

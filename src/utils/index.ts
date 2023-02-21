@@ -2,14 +2,19 @@ import {
     yupPropertyFormValidation,
     yupUserFormValidation,
     yupLoginValidation,
-    yupEditValidation
+    yupEditValidation,
 } from "./YupValidation/yupValidations";
+
 import { PrefetchRoutes } from "./prefetch/prefetchRoutes";
+
 import {
     getAuthTokenFromCookies,
     setAuthTokenToCookies,
+    deleteAuthTokenFromCookies,
 } from "./cookies/cookies";
+
 import { verifyToken } from "./auth/jwtToken";
+import { redirectToPath } from "./redirectPath/redirectPaths";
 
 export {
     PrefetchRoutes,
@@ -19,5 +24,7 @@ export {
     getAuthTokenFromCookies,
     setAuthTokenToCookies,
     verifyToken,
-    yupEditValidation
+    yupEditValidation,
+    deleteAuthTokenFromCookies,
+    redirectToPath
 };

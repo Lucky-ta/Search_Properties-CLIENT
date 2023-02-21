@@ -36,9 +36,11 @@ export class UserApi {
     }
   }
 
-  async deleteUser(userId: number) {
+  async deleteUser(userId: number, userToken: string) {
     try {
-      const { data } = await AXIOS_API.delete(`/user/${userId}`);
+      const { data } = await AXIOS_API.delete(`/user/${userId}`, {
+        headers: { Authorization: userToken }
+      });
       return data;
     } catch (error) {
       handleError(error);
