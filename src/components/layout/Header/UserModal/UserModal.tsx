@@ -12,6 +12,7 @@ export function UserModal({
   isModalOpen,
   closeModal,
   openModal,
+  user,
 }: IUserModalProps) {
   const router = useRouter();
 
@@ -30,7 +31,7 @@ export function UserModal({
           type="button"
         >
           {<BsPersonCircle />}
-          <span>User name</span>
+          <span>{user.name}</span>
         </button>
         <button onClick={() => handleRedirectButton("/register")} type="button">
           Registros
@@ -42,7 +43,7 @@ export function UserModal({
         >
           Sair
         </button>
-        <span className="email-span">Username@gmail.com</span>
+        <span className="email-span">{user.email}</span>
       </div>
     </S.UserModal>
   );

@@ -12,11 +12,11 @@ import { ILayoutProps } from "./interface";
 import * as S from "./style";
 
 export function Layout({ children }: ILayoutProps) {
-  const { showLeftOption } = useContext(MyContext);
+  const { showLeftOption, user } = useContext(MyContext);
 
   return (
     <S.Layout>
-      <Header />
+      <Header user={user} />
 
       <div className="content">
         {showLeftOption && <LeftBar />}

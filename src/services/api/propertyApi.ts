@@ -7,9 +7,11 @@ const handleError = (error: any) => {
 };
 
 export class PropertyApi {
-  async createProperty(property: IPropertyShape) {
+  async createProperty(property: IPropertyShape, userToken: string) {
     try {
-      const { data } = await AXIOS_API.post("/property", property);
+      const { data } = await AXIOS_API.post("/property", property, {
+        headers: { Authorization: `Bearer ${userToken}` },
+      });
       return data;
     } catch (error) {
       handleError(error);
@@ -37,21 +39,25 @@ export class PropertyApi {
     }
   }
 
-  async getProperty(propertyId: number) {
+  async getOwnProperties(userId: string, userToken: string) {
     try {
-      const { data } = await AXIOS_API.get(`/property/${propertyId}`);
+      const { data } = await AXIOS_API.get(`/property/${userId}`, {
+        headers: { Authorization: userToken },
+      });
       return data;
     } catch (error) {
       handleError(error);
     }
   }
 
-  async getAllProperties() {
+  async getAllProperties(userToken: string) {
     try {
-      const { data } = await AXIOS_API.get(`/property`);
+      const { data } = await AXIOS_API.get(`/property`, {
+        headers: { Authorization: userToken },
+      });
       return data;
     } catch (error) {
-      handleError(error);
+      throw error
     }
   }
 }

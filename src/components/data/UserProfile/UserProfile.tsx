@@ -36,7 +36,7 @@ export function UserProfile({ user }: IUserProfileProps) {
     const validationResult = await yupUserFormValidation(formData);
 
     if (!validationResult) {
-      console.log(`Created user: ${formData}`);
+      console.log(`Edited user: ${formData}`);
       // API REQUEST - EDIT USER
       formRef.current?.setErrors({});
       setIsLoading(false);

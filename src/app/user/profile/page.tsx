@@ -1,15 +1,17 @@
+"use client";
+
+import { useContext } from "react";
+
 import { UserProfile } from "components/data/UserProfile";
 import { Layout } from "components/Layout";
+import { MyContext } from "context";
 
 export default function Page() {
-  const userMock = {
-    name: "Lucas",
-    email: "someemail@gmail.com",
-    password: "123456",
-  };
+  const { user } = useContext(MyContext);
+
   return (
     <Layout>
-      <UserProfile user={userMock} />
+      <UserProfile user={user} />
     </Layout>
   );
 }

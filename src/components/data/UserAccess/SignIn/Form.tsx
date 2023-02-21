@@ -8,7 +8,7 @@ import { Loading } from "components/Loading";
 import { FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
 
-import { yupLoginValidation } from "utils";
+import { setAuthTokenToCookies, yupLoginValidation } from "utils";
 
 import { USER_API } from "services/api";
 
@@ -46,7 +46,8 @@ export function SignInForm() {
     }
 
     try {
-      await USER_API.loginUser(formData);
+      const { token } = await USER_API.loginUser(formData);
+      setAuthTokenToCookies(token);
       redirectToPath(router, "/search");
     } catch (error: any) {
       const errorMessage =

@@ -1,3 +1,4 @@
-import { UseFetch } from "./useFetch";
+import { useFetchProperties } from "./useFetchProperties";
+import { useFetchOwnProperties } from "./useFetchOwnProperties";
 
-export { UseFetch };
+export { useFetchProperties, useFetchOwnProperties };

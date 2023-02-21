@@ -6,23 +6,24 @@ import { Layout } from "components/Layout";
 
 import { IPropertyShape } from "interfaces";
 
-import { UseFetch } from "hooks";
+import { useFetchOwnProperties } from "hooks";
 
 export default function Page() {
-  const { data, error } = UseFetch();
+  const { data, error } = useFetchOwnProperties();
 
   if (error) return <div className="swr-message">Failed to load</div>;
   if (!data) return <div className="swr-message">Loading...</div>;
 
+  const properties = data.properties;
   const renderRegisteredProperties = () => {
-    return data.map((property: IPropertyShape, index: number) => (
+    return properties.map((property: IPropertyShape, index: number) => (
       <PropertyCard key={index} property={property} />
     ));
   };
   return (
     <Layout>
       <RegisterSystem />
-      <h2>{`Meus registros: (${data.length})`}</h2>
+      <h2>{`Meus registros: (${properties.length})`}</h2>
       <div className="search-result">{renderRegisteredProperties()}</div>
     </Layout>
   );

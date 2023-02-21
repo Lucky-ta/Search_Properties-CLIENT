@@ -14,8 +14,9 @@ import { MyContext } from "context";
 import { UserModal } from "./UserModal";
 
 import * as S from "./style";
+import { IHeaderProps } from "./interface";
 
-export function Header() {
+export function Header({ user }: IHeaderProps) {
   const [userModal, setUserModal] = useState(false);
   const { showLeftOption, setShowLeftOption } = useContext(MyContext);
 
@@ -40,7 +41,7 @@ export function Header() {
         type="button"
       >
         {<BsPersonCircle />}
-        <span>User name</span>
+        <span>{user.name}</span>
         {userModal ? (
           <MdOutlineKeyboardArrowUp className="arrow-svg" />
         ) : (
@@ -48,6 +49,7 @@ export function Header() {
         )}
       </button>
       <UserModal
+        user={user}
         isModalOpen={userModal}
         closeModal={closeModal}
         openModal={openModal}

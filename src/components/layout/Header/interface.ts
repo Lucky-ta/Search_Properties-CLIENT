@@ -1,5 +1,5 @@
 import { IUserShape } from "interfaces";
 
-export interface IUserProfileProps {
+export interface IHeaderProps {
     user: Omit<IUserShape, "password">;
 }

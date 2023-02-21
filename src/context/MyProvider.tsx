@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { IUserShape } from "interfaces";
+import { useState, useEffect } from "react";
 
-import { PrefetchRoutes } from "utils";
+import { getAuthTokenFromCookies, PrefetchRoutes, verifyToken } from "utils";
 
 import { MyContext } from "./MyContext";
 
@@ -12,13 +13,26 @@ interface MyProviderPropsShape {
 
 export function MyProvider({ children }: MyProviderPropsShape) {
   const [showLeftOption, setShowLeftOption] = useState(true);
+  const [user, setUser] = useState<Omit<IUserShape, "password">>({
+    name: "",
+    email: "",
+    id: 0,
+  });
 
   PrefetchRoutes();
 
   const data = {
     showLeftOption,
     setShowLeftOption,
+    user,
+    setUser,
   };
+
+  useEffect(() => {
+    const userToken: any = getAuthTokenFromCookies();
+    const decodedToken = verifyToken(userToken);
+    setUser(decodedToken);
+  }, []);
 
   return <MyContext.Provider value={data}>{children}</MyContext.Provider>;
 }

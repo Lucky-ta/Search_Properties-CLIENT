@@ -12,15 +12,13 @@ import { IUserProfileProps } from "../interface";
 import * as S from "./style";
 
 export function ProfileCard({ user }: IUserProfileProps) {
-  const { name, email, password } = user;
-
   return (
     <S.ProfileCard>
       <div className="card-header">
         <BsPersonCircle />
         <div>
-          <h2>{name}</h2>
-          <h3>{email}</h3>
+          <h2>{user.name}</h2>
+          <h3>{user.email}</h3>
         </div>
       </div>
       <div className="card-footer">

@@ -4,18 +4,19 @@ import { SearchSystem } from "components/data/RequestSystem";
 import { PropertyCard } from "components/data/PropertyCard";
 import { Layout } from "components/Layout";
 
-import { UseFetch } from "hooks";
+import { useFetchProperties } from "hooks";
 
 import { IPropertyShape } from "interfaces";
 
 export default function Page() {
-  const { data, error } = UseFetch();
+  const { data, error } = useFetchProperties();
 
   if (error) return <div className="swr-message">Failed to load</div>;
   if (!data) return <div className="swr-message">Loading...</div>;
 
+  const properties = data.properties;
   const renderProperties = () => {
-    return data.map((property: IPropertyShape, index: number) => (
+    return properties.map((property: IPropertyShape, index: number) => (
       <PropertyCard key={index} property={property} />
     ));
   };
