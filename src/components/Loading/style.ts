@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Loading = styled.div`
-    width: 1.2rem;
-    height: 1.2rem;
-    border-radius: 25px;
-    border: 5px solid #ccc;
-    border-top-color: #333;
-    animation: spin 1s linear infinite;
-    margin: auto;
+  width: 1em !important;
+  height:1em !important;
+  border-radius: 400px !important;
+  border: 5px solid #ccc !important;
+  border-top-color: #333 !important;
+  animation: spin 1s linear infinite !important;
+  margin: auto !important;
 
   @keyframes spin {
     100% {

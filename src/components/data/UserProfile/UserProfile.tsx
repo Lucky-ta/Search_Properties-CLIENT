@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 
 import { FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
@@ -8,16 +8,23 @@ import { Form } from "@unform/web";
 import { Loading } from "components/Loading";
 import { Input } from "components/Input";
 
-import { yupUserFormValidation } from "utils";
+import {
+  getAuthTokenFromCookies,
+  setAuthTokenToCookies,
+  yupEditValidation,
+} from "utils";
 
 import { IUserProfileProps } from "./interface";
 import { IUserShape } from "interfaces";
 
 import * as S from "./style";
 import { ProfileCard } from "./ProfileCard/ProfileCard";
+import { USER_API } from "services/api";
+import { MyContext } from "context";
 
 export function UserProfile({ user }: IUserProfileProps) {
   const [isLoading, setIsLoading] = useState(false);
+  const { setToken } = useContext(MyContext);
   const formRef = useRef<FormHandles>(null);
 
   const renderInputField = (
@@ -33,17 +40,27 @@ export function UserProfile({ user }: IUserProfileProps) {
 
   const handleFormSubmit = async (formData: IUserShape) => {
     setIsLoading(true);
-    const validationResult = await yupUserFormValidation(formData);
+    const formErrors = await yupEditValidation(formData);
 
-    if (!validationResult) {
-      console.log(`Edited user: ${formData}`);
-      // API REQUEST - EDIT USER
-      formRef.current?.setErrors({});
+    if (formErrors) {
+      formRef.current?.setErrors(formErrors);
       setIsLoading(false);
-    } else {
-      formRef.current?.setErrors(validationResult);
-      setIsLoading(false);
+      return;
     }
+
+    try {
+      formRef.current?.setErrors({});
+      const authToken: any = getAuthTokenFromCookies();
+      const { token } = await USER_API.editUser(user.id, formData, authToken);
+      setToken(token);
+      setAuthTokenToCookies(token);
+    } catch (error: any) {
+      const errorMessage =
+        error.response?.data?.message || "Something went wrong";
+      formRef.current?.setErrors({ email: errorMessage });
+    }
+
+    setIsLoading(false);
   };
 
   const handleDeleteUser = () => console.log("Delete account");
@@ -55,10 +72,7 @@ export function UserProfile({ user }: IUserProfileProps) {
         <Form ref={formRef} onSubmit={handleFormSubmit} initialData={user}>
           <h2>Editar</h2>
           {renderInputField("name", "text", "Nome")}
-          <div>
-            {renderInputField("email", "email", "E-mail")}
-            {renderInputField("password", "password", "Senha")}
-          </div>
+          <div>{renderInputField("email", "email", "E-mail")}</div>
           <button type="submit">{isLoading ? <Loading /> : "Salvar"}</button>
           <button type="button" onClick={handleDeleteUser}>
             Excluir conta

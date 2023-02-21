@@ -2,6 +2,7 @@ import {
     yupPropertyFormValidation,
     yupUserFormValidation,
     yupLoginValidation,
+    yupEditValidation
 } from "./YupValidation/yupValidations";
 import { PrefetchRoutes } from "./prefetch/prefetchRoutes";
 import {
@@ -17,5 +18,6 @@ export {
     yupLoginValidation,
     getAuthTokenFromCookies,
     setAuthTokenToCookies,
-    verifyToken
+    verifyToken,
+    yupEditValidation
 };

@@ -13,6 +13,7 @@ interface MyProviderPropsShape {
 
 export function MyProvider({ children }: MyProviderPropsShape) {
   const [showLeftOption, setShowLeftOption] = useState(true);
+  const [token, setToken] = useState("");
   const [user, setUser] = useState<Omit<IUserShape, "password">>({
     name: "",
     email: "",
@@ -26,13 +27,15 @@ export function MyProvider({ children }: MyProviderPropsShape) {
     setShowLeftOption,
     user,
     setUser,
+    token,
+    setToken,
   };
 
   useEffect(() => {
     const userToken: any = getAuthTokenFromCookies();
     const decodedToken = verifyToken(userToken);
     setUser(decodedToken);
-  }, []);
+  }, [token]);
 
   return <MyContext.Provider value={data}>{children}</MyContext.Provider>;
 }

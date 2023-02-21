@@ -11,6 +11,11 @@ export const userLoginSchema = Yup.object().shape({
     password: Yup.string().min(6).required("Senha é um campo obrigatório"),
 });
 
+export const userEditSchema = Yup.object().shape({
+    name: Yup.string().min(3),
+    email: Yup.string().email(),
+});
+
 export const propertySchema = Yup.object().shape({
     name: Yup.string().min(3).required("Nome é um campo obrigatório"),
     propertyId: Yup.string().min(6).required("ID é um campo obrigatório"),

@@ -8,6 +8,8 @@ interface IContextShape {
     setShowLeftOption: (value: boolean) => void;
     user: Omit<IUserShape, "password">;
     setUser: (user: Omit<IUserShape, "password">) => void;
+    token: string;
+    setToken: (token: string) => void;
 }
 
 const initialContextValue: IContextShape = {
@@ -19,6 +21,8 @@ const initialContextValue: IContextShape = {
         id: 0,
     },
     setUser: (user: Omit<IUserShape, "password">) => { },
+    token: "",
+    setToken: (token: string) => ""
 };
 
 export const MyContext = createContext<IContextShape>(initialContextValue);

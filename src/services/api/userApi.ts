@@ -25,12 +25,14 @@ export class UserApi {
     }
   }
 
-  async editUser(userId: number, editedUser: IUserShape) {
+  async editUser(userId: number, editedUser: IUserShape, userToken: string) {
     try {
-      const { data } = await AXIOS_API.put(`/user/${userId}`, editedUser);
+      const { data } = await AXIOS_API.patch(`/user/${userId}`, editedUser, {
+        headers: { Authorization: userToken },
+      });
       return data;
     } catch (error) {
-      handleError(error);
+      throw error
     }
   }
 
