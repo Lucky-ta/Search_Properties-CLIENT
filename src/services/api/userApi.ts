@@ -44,22 +44,4 @@ export class UserApi {
       handleError(error);
     }
   }
-
-  async getUser(userId: number) {
-    try {
-      const { data } = await AXIOS_API.get(`/user/${userId}`);
-      return data;
-    } catch (error) {
-      handleError(error);
-    }
-  }
-
-  async getAllUsers() {
-    try {
-      const { data } = await AXIOS_API.get(`/user`);
-      return data;
-    } catch (error) {
-      handleError(error);
-    }
-  }
 }
