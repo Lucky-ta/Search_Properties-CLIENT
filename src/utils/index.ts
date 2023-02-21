@@ -1,4 +1,4 @@
-import { yupPropertyFormValidation, yupUserFormValidation } from "./YupValidation/yupValidations";
+import { yupPropertyFormValidation, yupUserFormValidation, yupLoginValidation } from "./YupValidation/yupValidations";
 import { PrefetchRoutes } from "./prefetch/prefetchRoutes";
 
-export { PrefetchRoutes, yupPropertyFormValidation, yupUserFormValidation };
+export { PrefetchRoutes, yupPropertyFormValidation, yupUserFormValidation, yupLoginValidation };

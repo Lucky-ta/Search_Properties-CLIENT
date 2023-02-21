@@ -1,3 +1,5 @@
 import { UserApi } from "./userApi";
 
-export { UserApi };
+const USER_API = new UserApi();
+
+export { USER_API };

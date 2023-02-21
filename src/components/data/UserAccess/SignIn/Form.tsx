@@ -8,17 +8,20 @@ import { Loading } from "components/Loading";
 import { FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
 
-import { yupUserFormValidation } from "utils";
+import { yupLoginValidation } from "utils";
 
-import { UserApi } from "services/api";
+import { USER_API } from "services/api";
 
 import { IUserShape } from "interfaces";
 
 import * as S from "../style";
+import { redirectToPath } from "utils/redirectPath";
+import { useRouter } from "next/navigation";
 
 export function SignInForm() {
   const [isLoading, setIsLoading] = useState(false);
   const formRef = useRef<FormHandles>(null);
+  const router = useRouter();
 
   const renderInputField = (
     fieldName: string,
@@ -31,19 +34,27 @@ export function SignInForm() {
     </label>
   );
 
-  const handleFormSubmit = async (formData: IUserShape) => {
+  const handleFormSubmit = async (formData: Omit<IUserShape, "name">) => {
     setIsLoading(true);
-    const validationResult = await yupUserFormValidation(formData);
 
-    if (!validationResult) {
-      const userRoutes = new UserApi();
+    const formErrors = await yupLoginValidation(formData);
 
-      formRef.current?.setErrors({});
+    if (formErrors) {
+      formRef.current?.setErrors(formErrors);
       setIsLoading(false);
-    } else {
-      formRef.current?.setErrors(validationResult);
-      setIsLoading(false);
+      return;
     }
+
+    try {
+      await USER_API.loginUser(formData);
+      redirectToPath(router, "/search");
+    } catch (error: any) {
+      const errorMessage =
+        error.response?.data?.message || "Something went wrong";
+      formRef.current?.setErrors({ password: errorMessage });
+    }
+
+    setIsLoading(false);
   };
 
   return (

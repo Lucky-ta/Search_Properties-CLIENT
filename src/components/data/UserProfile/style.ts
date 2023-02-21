@@ -100,8 +100,8 @@ export const UserProfile = styled.div`
     margin-top: 1rem;
 
     &:hover {
-        background-color: red;
-        color: white;
+      background-color: red;
+      color: white;
     }
   }
 

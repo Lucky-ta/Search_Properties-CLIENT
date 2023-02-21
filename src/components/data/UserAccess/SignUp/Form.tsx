@@ -13,10 +13,14 @@ import { IUserShape } from "interfaces";
 import { yupUserFormValidation } from "utils";
 
 import * as S from "../style";
+import { USER_API } from "services/api";
+import { redirectToPath } from "utils/redirectPath";
+import { useRouter } from "next/navigation";
 
 export function SignUpForm() {
   const [isLoading, setIsLoading] = useState(false);
   const formRef = useRef<FormHandles>(null);
+  const router = useRouter();
 
   const renderInputField = (
     fieldName: string,
@@ -35,9 +39,11 @@ export function SignUpForm() {
 
     if (!validationResult) {
       console.log(`Created user: ${formData}`);
-      // API REQUEST - CREATE USER
+      await USER_API.createUser(formData);
       formRef.current?.setErrors({});
       setIsLoading(false);
+      redirectToPath(router, "/signIn");
+      return;
     } else {
       formRef.current?.setErrors(validationResult);
       setIsLoading(false);

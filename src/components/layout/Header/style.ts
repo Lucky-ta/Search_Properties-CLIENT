@@ -18,7 +18,6 @@ export const Header = styled.div<IStyledHeader>`
   height: 8%;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
-
   z-index: ${({ modalHeaderStatus }) => modalHeaderStatus && 1};
 
   button {
@@ -62,8 +61,8 @@ export const Header = styled.div<IStyledHeader>`
   }
 
   @media (max-width: 450px) {
-        .title {
-          display: none;
-        }
-      }
+    .title {
+      display: none;
+    }
+  }
 `;

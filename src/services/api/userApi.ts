@@ -16,6 +16,15 @@ export class UserApi {
     }
   }
 
+  async loginUser(user: Omit<IUserShape, "name">) {
+    try {
+      const { data } = await AXIOS_API.post("/user/login", user);
+      return data;
+    } catch (error) {
+      throw error
+    }
+  }
+
   async editUser(userId: number, editedUser: IUserShape) {
     try {
       const { data } = await AXIOS_API.put(`/user/${userId}`, editedUser);

@@ -30,18 +30,17 @@ export const RegisterSystem = styled.div`
     flex-direction: column;
 
     &.checkbox {
-        flex-direction: row;
-        flex-flow: row-reverse;
-        cursor: pointer;
-        gap: 1rem;
-        justify-content: start;
+      flex-direction: row;
+      flex-flow: row-reverse;
+      cursor: pointer;
+      gap: 1rem;
+      justify-content: start;
     }
 
     input[type="checkbox"] {
-        cursor: pointer;
-        color: green;
+      cursor: pointer;
+      color: green;
     }
-
   }
 
   input {
@@ -56,10 +55,9 @@ export const RegisterSystem = styled.div`
     &:hover,
     &:focus {
       outline: none;
-    border-color: #00a2ff;
-    background-color: #fff;
-    box-shadow: 0px 0px 5px rgba(0, 162, 255, 0.5);
-
+      border-color: #00a2ff;
+      background-color: #fff;
+      box-shadow: 0px 0px 5px rgba(0, 162, 255, 0.5);
     }
   }
 
