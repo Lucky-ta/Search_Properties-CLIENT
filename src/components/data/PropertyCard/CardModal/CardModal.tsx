@@ -2,19 +2,26 @@
 
 import { useRef, useState } from "react";
 
-import { ICardModalProps } from "./interface";
-
 import { BsPersonCircle } from "public/react-icons/index";
+
+import { FormHandles } from "@unform/core";
+import { Form } from "@unform/web";
+
+import { IPropertyCardShape } from "interfaces";
+import { ICardModalProps } from "./interface";
 
 import { Loading } from "components/Loading";
 import { Input } from "components/Input";
 
-import { Form } from "@unform/web";
+import {
+  formatPropertyToRequestShape,
+  getAuthTokenFromCookies,
+  yupPropertyEditFormValidation,
+} from "utils";
+
+import { PROPERTY_API } from "services/api";
 
 import * as S from "./style";
-import { yupPropertyEditFormValidation } from "utils";
-import { IPropertyShape } from "interfaces";
-import { FormHandles } from "@unform/core";
 
 export function CardModal({
   isModalOpen,
@@ -22,7 +29,7 @@ export function CardModal({
   openModal,
   property,
 }: ICardModalProps) {
-  const { isAvailable, registeredBy } = property;
+  const { isAvailable, registeredByUser } = property;
   const [isLoading, setIsLoading] = useState(false);
   const [availability, setAvailability] = useState(isAvailable);
   const formRef = useRef<FormHandles>(null);
@@ -40,10 +47,7 @@ export function CardModal({
 
   const toggleAvailability = (value: boolean) => setAvailability(value);
 
-  const handleFormSubmit = async (formData: IPropertyShape) => {
-    console.log(formData);
-    console.log(property);
-
+  const handleFormSubmit = async (formData: IPropertyCardShape) => {
     setIsLoading(true);
     const formErrors = await yupPropertyEditFormValidation(formData);
 
@@ -52,9 +56,23 @@ export function CardModal({
       setIsLoading(false);
       return;
     }
-    console.log("request");
+    const formatData = formatPropertyToRequestShape(
+      property.id,
+      formData,
+      availability
+    );
 
-    // API REQUEST
+    try {
+      const userToken: any = getAuthTokenFromCookies();
+      await PROPERTY_API.editProperty(property.id, formatData, userToken);
+      setIsLoading(false);
+      closeModal();
+    } catch (error: any) {
+      const errorMessage =
+        error.response?.data?.message || "Something went wrong";
+      formRef.current?.setErrors({ street: errorMessage });
+    }
+
     setIsLoading(false);
   };
 
@@ -70,16 +88,16 @@ export function CardModal({
       <div>
         <BsPersonCircle />
         <div className="regiteredBy">
-          <h3>{registeredBy.name}</h3>
-          <span>{registeredBy.email}</span>
+          <h3>{registeredByUser.name}</h3>
+          <span>{registeredByUser.email}</span>
         </div>
         <span>{availability ? "Disponível" : "Indisponível"}</span>
       </div>
       <Form ref={formRef} onSubmit={handleFormSubmit} initialData={property}>
         {renderInputField("name", "text", "Nome")}
         {renderInputField("propertyId", "text", "ID")}
-        {renderInputField("address.city", "text", "Cidade")}
-        {renderInputField("address.street", "text", "Rua")}
+        {renderInputField("city", "text", "Cidade")}
+        {renderInputField("street", "text", "Rua")}
         <div>
           <button
             className="enable"

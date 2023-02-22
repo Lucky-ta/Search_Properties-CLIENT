@@ -1,3 +1,3 @@
-import { IUserShape, IPropertyShape, IPropertyResponseApiShape } from "./interfaces";
+import { IUserShape, IPropertyShape, IPropertyResponseApiShape, IPropertyCardShape } from "./interfaces";
 
-export type { IUserShape, IPropertyShape, IPropertyResponseApiShape };
+export type { IUserShape, IPropertyShape, IPropertyResponseApiShape, IPropertyCardShape };

@@ -14,7 +14,7 @@ export class PropertyApi {
     }
   }
 
-  async editProperty(propertyId: number, editedProperty: IPropertyShape, userToken: string) {
+  async editProperty(propertyId: number, editedProperty: Omit<IPropertyShape, "registeredByUser">, userToken: string) {
     try {
       const { data } = await AXIOS_API.patch(`/property/${propertyId}`, editedProperty, {
         headers: { Authorization: userToken }

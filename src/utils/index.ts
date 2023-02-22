@@ -17,6 +17,8 @@ import {
 import { verifyToken } from "./auth/jwtToken";
 import { redirectToPath } from "./redirectPath/redirectPaths";
 
+import { formatPropertyToRequestShape } from "./format/formatData";
+
 export {
     PrefetchRoutes,
     yupPropertyFormValidation,
@@ -28,5 +30,6 @@ export {
     yupEditValidation,
     deleteAuthTokenFromCookies,
     redirectToPath,
-    yupPropertyEditFormValidation
+    yupPropertyEditFormValidation,
+    formatPropertyToRequestShape
 };

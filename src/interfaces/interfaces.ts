@@ -8,19 +8,26 @@ export interface IUserShape {
 export interface IPropertyShape {
     name: string;
     propertyId: string;
-    registeredBy: IUserShape;
+    registeredByUser: IUserShape;
     isAvailable: boolean;
     city: string;
     street: string;
+    id: number;
 }
 
 export interface IPropertyResponseApiShape {
     name: string;
     propertyId: string;
-    registeredBy: IUserShape;
+    registeredByUser: IUserShape;
     isAvailable: boolean;
-    address: {
-        city: string;
-        street: string;
-    }
+    city: string;
+    street: string;
+    id: number;
+}
+
+export interface IPropertyCardShape {
+    name: string;
+    propertyId: string;
+    city: string;
+    street: string;
 }

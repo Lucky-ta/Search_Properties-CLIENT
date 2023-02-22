@@ -1,5 +1,5 @@
-import { IPropertyShape } from "interfaces";
+import { IPropertyResponseApiShape } from "interfaces";
 
 export interface IPropertyCardProps {
-    property: IPropertyShape
+    property: IPropertyResponseApiShape
 }
