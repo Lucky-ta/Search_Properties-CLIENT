@@ -3,9 +3,7 @@ import { jwtVerify } from 'jose';
 
 export default async function middleware(req: NextRequest) {
     const jwt = req.cookies.get('authToken');
-    console.log(jwt);
-
-    const { pathname, origin } = req.nextUrl;
+    const { pathname } = req.nextUrl;
 
     if (pathname.includes('/home')) {
         if (jwt === undefined) {

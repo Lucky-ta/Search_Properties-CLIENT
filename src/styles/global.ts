@@ -45,17 +45,22 @@ li {
     z-index: 1;
   }
 
-  div.swr-message {
-    font-size: 1.5rem;
+  div.swr-message, .swr-message-error {
+  font-size: 1.5rem;
   font-weight: bold;
   display: flex;
   height: 100vh;
   width: 100%;
   justify-content: center;
   align-items: center;
-  background-color: #ffcccc;
-  color: #ff0000;
+  background-color: #4caf50;
+  color: black;
   padding: 1rem;
   border-radius: 6px;
+}
+  
+  div.swr-message-error {
+    background-color: #ffcccc;
+    color: #ff0000;
   }
 `;

@@ -15,7 +15,7 @@ export default function Page() {
   const { filter } = useContext(MyContext);
   const { data, error } = useFetchProperties();
 
-  if (error) return <div className="swr-message">Failed to load</div>;
+  if (error) return <div className="swr-message-error">Failed to load API</div>;
   if (!data) return <div className="swr-message">Loading...</div>;
 
   console.log(data);
