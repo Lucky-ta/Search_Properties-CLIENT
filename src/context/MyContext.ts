@@ -10,6 +10,8 @@ interface IContextShape {
     setUser: (user: Omit<IUserShape, "password">) => void;
     token: string;
     setToken: (token: string) => void;
+    filter: string;
+    setFilter: (word: string) => void;
 }
 
 const initialContextValue: IContextShape = {
@@ -22,7 +24,9 @@ const initialContextValue: IContextShape = {
     },
     setUser: (user: Omit<IUserShape, "password">) => { },
     token: "",
-    setToken: (token: string) => ""
+    setToken: (token: string) => "",
+    filter: "",
+    setFilter: (word: string) => ""
 };
 
 export const MyContext = createContext<IContextShape>(initialContextValue);

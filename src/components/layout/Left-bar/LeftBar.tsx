@@ -23,16 +23,16 @@ export function LeftBar() {
   return (
     <S.LeftBar>
       <Button
-        isSelected={selectedPath === "/search"}
+        isSelected={selectedPath === "/home/search"}
         content="Pesquisar imóvel"
         icon={<BiSearchAlt2 />}
-        onClick={() => handleRedirectPath("/search")}
+        onClick={() => handleRedirectPath("/home/search")}
       />
       <Button
-        isSelected={selectedPath === "/register"}
+        isSelected={selectedPath === "/home/register"}
         content="Regitrar imóvel"
         icon={<IoCreateOutline />}
-        onClick={() => handleRedirectPath("/register")}
+        onClick={() => handleRedirectPath("/home/register")}
       />
     </S.LeftBar>
   );

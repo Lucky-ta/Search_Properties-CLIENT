@@ -14,10 +14,12 @@ import { IPropertyShape } from "interfaces";
 
 import * as S from "./style";
 import { PROPERTY_API } from "services/api";
+import { useFetchProperties } from "hooks";
 
 export function RegisterSystem() {
   const [isLoading, setIsLoading] = useState(false);
   const formRef = useRef<FormHandles>(null);
+  const { mutate, data } = useFetchProperties();
 
   const renderInputField = (
     fieldName: string,
@@ -43,6 +45,7 @@ export function RegisterSystem() {
     try {
       const userToken: any = getAuthTokenFromCookies();
       await PROPERTY_API.createProperty(formData, userToken);
+      mutate(data);
       setIsLoading(false);
       formRef.current?.reset();
       formRef.current?.setErrors({});

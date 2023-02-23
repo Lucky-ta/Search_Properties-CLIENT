@@ -36,3 +36,41 @@ export const Layout = styled.div`
     }
   }
 `;
+
+export const ErrorLayout = styled.div`
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  h1 {
+    font-size: 4rem;
+  margin-bottom: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+
+  }
+
+  button {
+
+font-size: 1.5rem;
+padding: 1rem 2rem;
+background-color: #fff;
+color: #333;
+border: 2px solid #333;
+border-radius: 5px;
+cursor: pointer;
+
+&:hover {
+  background-color: #333;
+  color: #fff;
+}
+}
+`;
+
+
+

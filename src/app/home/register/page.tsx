@@ -1,20 +1,26 @@
 "use client";
 
+import { useContext } from "react";
+
 import { RegisterSystem } from "components/data/RequestSystem";
 import { PropertyCard } from "components/data/PropertyCard";
 import { Layout } from "components/Layout";
 
 import { IPropertyShape } from "interfaces";
 
-import { useFetchOwnProperties } from "hooks";
+import { useFetchProperties } from "hooks";
+import { MyContext } from "context";
 
 export default function Page() {
-  const { data, error } = useFetchOwnProperties();
+  const { data, error } = useFetchProperties();
+  const { user } = useContext(MyContext);
 
   if (error) return <div className="swr-message">Failed to load</div>;
   if (!data) return <div className="swr-message">Loading...</div>;
 
-  const properties = data.properties;
+  const properties = data.properties.filter(
+    (propery: IPropertyShape) => propery.registeredByUser.id === user.id
+  );
   const renderRegisteredProperties = () => {
     return properties.map((property: IPropertyShape, index: number) => (
       <PropertyCard key={index} property={property} />

@@ -51,7 +51,7 @@ export function SignInForm() {
       const { token } = await USER_API.loginUser(formData);
       setAuthTokenToCookies(token);
       setToken(token);
-      redirectToPath(router, "/search");
+      redirectToPath(router, "/home/search");
     } catch (error: any) {
       const errorMessage =
         error.response?.data?.message || "Something went wrong";

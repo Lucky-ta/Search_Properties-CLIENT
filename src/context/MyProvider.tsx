@@ -14,6 +14,7 @@ interface MyProviderPropsShape {
 export function MyProvider({ children }: MyProviderPropsShape) {
   const [showLeftOption, setShowLeftOption] = useState(true);
   const [token, setToken] = useState("");
+  const [filter, setFilter] = useState("");
   const [user, setUser] = useState<Omit<IUserShape, "password">>({
     name: "",
     email: "",
@@ -29,6 +30,8 @@ export function MyProvider({ children }: MyProviderPropsShape) {
     setUser,
     token,
     setToken,
+    filter,
+    setFilter,
   };
 
   useEffect(() => {

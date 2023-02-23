@@ -22,6 +22,7 @@ import {
 import { PROPERTY_API } from "services/api";
 
 import * as S from "./style";
+import { useFetchProperties } from "hooks";
 
 export function CardModal({
   isModalOpen,
@@ -33,6 +34,8 @@ export function CardModal({
   const [isLoading, setIsLoading] = useState(false);
   const [availability, setAvailability] = useState(isAvailable);
   const formRef = useRef<FormHandles>(null);
+
+  const { mutate, data } = useFetchProperties();
 
   const renderInputField = (
     fieldName: string,
@@ -65,6 +68,7 @@ export function CardModal({
     try {
       const userToken: any = getAuthTokenFromCookies();
       await PROPERTY_API.editProperty(property.id, formatData, userToken);
+      mutate(data);
       setIsLoading(false);
       closeModal();
     } catch (error: any) {
@@ -82,6 +86,7 @@ export function CardModal({
     try {
       const userToken: any = getAuthTokenFromCookies();
       await PROPERTY_API.deleteProperty(property.id, userToken);
+      mutate(data);
       setIsLoading(false);
       closeModal();
     } catch (error: any) {

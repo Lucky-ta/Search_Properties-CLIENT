@@ -1,5 +1,5 @@
 export interface IUserShape {
-    name?: string;
+    name: string;
     email: string;
     password: string;
     id: number;
