@@ -2,6 +2,8 @@
 
 import { useState, useContext } from "react";
 
+import { MyContext } from "context";
+
 import { IPropertyCardProps } from "./interface";
 
 import { BsPersonCircle, VscGear } from "public/react-icons/index";
@@ -9,7 +11,6 @@ import { BsPersonCircle, VscGear } from "public/react-icons/index";
 import { CardModal } from "./CardModal";
 
 import * as S from "./style";
-import { MyContext } from "context";
 
 export function PropertyCard({ property }: IPropertyCardProps) {
   const [cardModal, setCardModal] = useState(false);

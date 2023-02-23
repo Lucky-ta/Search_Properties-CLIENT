@@ -1,4 +1,4 @@
-import { IPropertyCardShape, IPropertyResponseApiShape, IPropertyShape } from "interfaces";
+import { IPropertyCardShape } from "interfaces";
 
 export const formatPropertyToRequestShape = (propertyDbId: number, formData: IPropertyCardShape, isAvailable: boolean) => {
     const { name, city, street, propertyId } = formData;

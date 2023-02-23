@@ -2,6 +2,8 @@
 
 import { useRef, useState } from "react";
 
+import { useFetchProperties } from "hooks";
+
 import { Loading } from "components/Loading";
 import { Input } from "components/Input";
 
@@ -12,9 +14,9 @@ import { getAuthTokenFromCookies, yupPropertyFormValidation } from "utils";
 
 import { IPropertyShape } from "interfaces";
 
-import * as S from "./style";
 import { PROPERTY_API } from "services/api";
-import { useFetchProperties } from "hooks";
+
+import * as S from "./style";
 
 export function RegisterSystem() {
   const [isLoading, setIsLoading] = useState(false);

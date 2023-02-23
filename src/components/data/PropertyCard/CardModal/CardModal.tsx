@@ -2,6 +2,8 @@
 
 import { useRef, useState } from "react";
 
+import { useFetchProperties } from "hooks";
+
 import { BsPersonCircle } from "public/react-icons/index";
 
 import { FormHandles } from "@unform/core";
@@ -22,7 +24,6 @@ import {
 import { PROPERTY_API } from "services/api";
 
 import * as S from "./style";
-import { useFetchProperties } from "hooks";
 
 export function CardModal({
   isModalOpen,

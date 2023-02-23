@@ -2,6 +2,8 @@
 
 import { useContext } from "react";
 
+import { MyContext } from "context";
+
 import { RegisterSystem } from "components/data/RequestSystem";
 import { PropertyCard } from "components/data/PropertyCard";
 import { Layout } from "components/Layout";
@@ -9,7 +11,6 @@ import { Layout } from "components/Layout";
 import { IPropertyShape } from "interfaces";
 
 import { useFetchProperties } from "hooks";
-import { MyContext } from "context";
 
 export default function Page() {
   const { data, error } = useFetchProperties();

@@ -1,8 +1,10 @@
 "use client";
 
-import { MyContext } from "context";
-import { BiSearchAlt2 } from "public/react-icons";
 import { useContext } from "react";
+
+import { MyContext } from "context";
+
+import { BiSearchAlt2 } from "public/react-icons";
 
 import * as S from "./style";
 

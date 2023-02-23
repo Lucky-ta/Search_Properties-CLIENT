@@ -1,11 +1,11 @@
 "use client";
 
-import { IUserShape } from "interfaces";
 import { useState, useEffect } from "react";
+import { MyContext } from "./MyContext";
+
+import { IUserShape } from "interfaces";
 
 import { getAuthTokenFromCookies, PrefetchRoutes, verifyToken } from "utils";
-
-import { MyContext } from "./MyContext";
 
 interface MyProviderPropsShape {
   children: React.ReactNode;

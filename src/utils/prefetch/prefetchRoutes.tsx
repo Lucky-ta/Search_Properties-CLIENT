@@ -10,7 +10,7 @@ export function PrefetchRoutes() {
 
   useEffect(() => {
     routes.forEach((route) => {
-      router.prefetch(`/${route}`);
+      router.prefetch(`/home/${route}`);
     });
   }, []);
 }

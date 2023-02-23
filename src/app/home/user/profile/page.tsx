@@ -2,9 +2,10 @@
 
 import { useContext } from "react";
 
+import { MyContext } from "context";
+
 import { UserProfile } from "components/data/UserProfile";
 import { Layout } from "components/Layout";
-import { MyContext } from "context";
 
 export default function Page() {
   const { user } = useContext(MyContext);

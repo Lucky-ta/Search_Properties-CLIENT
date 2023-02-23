@@ -18,8 +18,6 @@ export default function Page() {
   if (error) return <div className="swr-message-error">Failed to load API</div>;
   if (!data) return <div className="swr-message">Loading...</div>;
 
-  console.log(data);
-
   const filterProperties = (
     properties: IPropertyShape[],
     filter: string

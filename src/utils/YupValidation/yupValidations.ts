@@ -1,4 +1,4 @@
-import { IPropertyCardShape, IPropertyResponseApiShape, IPropertyShape, IUserShape } from "interfaces";
+import { IPropertyCardShape, IPropertyShape, IUserShape } from "interfaces";
 
 import { userSchema, propertySchema, userLoginSchema, userEditSchema, propertyEditSchema } from "./yupSchemas";
 import * as Yup from "yup";

@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 
 import { BsPersonCircle } from "public/react-icons";
+import { redirectToPath } from "utils";
 
 import { IUserModalProps } from "./interface";
 
@@ -16,7 +17,7 @@ export function UserModal({
 }: IUserModalProps) {
   const router = useRouter();
 
-  const handleRedirectButton = (path: string) => router.push(path);
+  const handleRedirectButton = (path: string) => redirectToPath(router, path);
   return (
     <S.UserModal
       isOpen={isModalOpen}
@@ -27,13 +28,16 @@ export function UserModal({
       <h2>Perfil</h2>
       <div>
         <button
-          onClick={() => handleRedirectButton("/user/profile")}
+          onClick={() => handleRedirectButton("/home/user/profile")}
           type="button"
         >
           {<BsPersonCircle />}
           <span>{user.name?.split(" ")[0]}</span>
         </button>
-        <button onClick={() => handleRedirectButton("/register")} type="button">
+        <button
+          onClick={() => handleRedirectButton("/home/register")}
+          type="button"
+        >
           Registros
         </button>
         <button

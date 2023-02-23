@@ -2,6 +2,10 @@
 
 import { useRef, useState } from "react";
 
+import { useRouter } from "next/navigation";
+
+import { USER_API } from "services/api";
+
 import { Input } from "components/Input";
 import { Loading } from "components/Loading";
 
@@ -11,11 +15,9 @@ import { Form } from "@unform/web";
 import { IUserShape } from "interfaces";
 
 import { yupUserFormValidation } from "utils";
+import { redirectToPath } from "utils";
 
 import * as S from "../style";
-import { USER_API } from "services/api";
-import { redirectToPath } from "utils";
-import { useRouter } from "next/navigation";
 
 export function SignUpForm() {
   const [isLoading, setIsLoading] = useState(false);
