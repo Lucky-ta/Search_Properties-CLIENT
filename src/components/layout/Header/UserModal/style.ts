@@ -44,7 +44,18 @@ export const UserModal = styled(ReactModal)`
     font-weight: bold;
     margin-bottom: 0.5rem;
     cursor: pointer;
+    justify-content: center;
     transition: all 0.2s ease-in-out;
+    position: relative;
+
+    svg {
+      position: absolute;
+      left: 1rem;
+    }
+
+    span {
+      margin: auto;
+    }
 
     &:hover {
       background-color: #3e474f;

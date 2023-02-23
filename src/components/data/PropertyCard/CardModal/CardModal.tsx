@@ -76,6 +76,22 @@ export function CardModal({
     setIsLoading(false);
   };
 
+  const handleDeleteProperty = async () => {
+    setIsLoading(true);
+
+    try {
+      const userToken: any = getAuthTokenFromCookies();
+      await PROPERTY_API.deleteProperty(property.id, userToken);
+      setIsLoading(false);
+      closeModal();
+    } catch (error: any) {
+      const errorMessage =
+        error.response?.data?.message || "Something went wrong";
+      formRef.current?.setErrors({ street: errorMessage });
+    }
+    setIsLoading(false);
+  };
+
   return (
     <S.CardModal
       isOpen={isModalOpen}
@@ -112,6 +128,13 @@ export function CardModal({
             onClick={() => toggleAvailability(false)}
           >
             INDISPONÍVEL
+          </button>
+          <button
+            onClick={handleDeleteProperty}
+            type="button"
+            className="delete"
+          >
+            EXCLUIR
           </button>
         </div>
         <button type="submit">{isLoading ? <Loading /> : "Salvar"}</button>

@@ -25,9 +25,11 @@ export class PropertyApi {
     }
   }
 
-  async deleteProperty(propertyId: number) {
+  async deleteProperty(propertyId: number, userToken: string) {
     try {
-      const { data } = await AXIOS_API.delete(`/property/${propertyId}`);
+      const { data } = await AXIOS_API.delete(`/property/${propertyId}`, {
+        headers: { Authorization: userToken }
+      });
       return data;
     } catch (error) {
       throw error;

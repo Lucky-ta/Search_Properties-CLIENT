@@ -9,7 +9,7 @@ interface IStyledCardModalProps {
   isAvailable: boolean;
 }
 
-export const CardModal = styled(ReactModal)<IStyledCardModalProps>`
+export const CardModal = styled(ReactModal) <IStyledCardModalProps>`
   position: fixed;
   top: 50%;
   left: 50%;
@@ -75,7 +75,7 @@ export const CardModal = styled(ReactModal)<IStyledCardModalProps>`
       font-size: 1.4rem;
       font-weight: bold;
       color: ${({ isAvailable }) =>
-        isAvailable ? `${colors.cardEnable}` : `${colors.cardDisabled}`};
+    isAvailable ? `${colors.cardEnable}` : `${colors.cardDisabled}`};
     }
   }
 
@@ -112,14 +112,14 @@ export const CardModal = styled(ReactModal)<IStyledCardModalProps>`
 
       button.enable {
         background-color: ${({ isAvailable }) =>
-          isAvailable ? `${colors.cardEnable}` : `${colors.secondary}`};
+    isAvailable ? `${colors.cardEnable}` : `${colors.secondary}`};
         border-top-right-radius: 0px;
         border-bottom-right-radius: 0px;
       }
 
       button.disable {
         background-color: ${({ isAvailable }) =>
-          isAvailable ? `${colors.secondary}` : `${colors.cardDisabled}`};
+    isAvailable ? `${colors.secondary}` : `${colors.cardDisabled}`};
         border-top-left-radius: 0px;
         border-bottom-left-radius: 0px;
       }
@@ -145,5 +145,11 @@ export const CardModal = styled(ReactModal)<IStyledCardModalProps>`
         background-color: #0066cc;
       }
     }
+
+    button.delete {
+        background-color: ${colors.cardDisabled};
+        margin: auto;
+        margin-right: 0;
+      }
   }
 `;

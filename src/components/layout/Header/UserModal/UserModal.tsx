@@ -31,7 +31,7 @@ export function UserModal({
           type="button"
         >
           {<BsPersonCircle />}
-          <span>{user.name}</span>
+          <span>{user.name?.split(" ")[0]}</span>
         </button>
         <button onClick={() => handleRedirectButton("/register")} type="button">
           Registros
